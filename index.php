@@ -151,20 +151,43 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
 
         <div class="dishes-grid" id="dishes-feminino">
-            <div class="dish">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/aureola.png" class="rosto-photo" alt="Depilação a laser feminina na aureola em Xanxerê">
-                <h3 class="dish-title">AUREOLA</h3>
-                <span class="dish-description">Remoção precisa e segura dos pelos ao redor da aréola, proporcionando um aspecto mais limpo e delicado à região.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(67+)</span>
+            <?php foreach ($servicos as $servico) { ?>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="<?php echo $servico['imagem']; ?>"
+                         class="rosto-photo"
+                         alt="Depilação a laser feminina na <?php echo strtolower($servico['nome']); ?> em Xanxerê">
+
+                    <h3 class="dish-title"><?php echo $servico['nome']; ?></h3>
+
+                    <span class="dish-description">
+                        <?php echo $servico['descricao']; ?>
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(67+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>
+                            R$<?php echo number_format($servico['preco'], 2, ',', '.'); ?>
+                        </h4>
+                        <button class="btn-default add-to-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="dish-price">
-                    <h4>R$39,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+
+            <?php } ?>
 
             <div class="dish">
                 <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
