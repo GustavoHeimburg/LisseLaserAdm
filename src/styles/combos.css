@@ -1,0 +1,80 @@
+body {
+    outline: 5px solid red;
+}
+
+.combo-extra {
+  position: relative;
+  background-color: #e6f0ff;
+  border-radius: 18px;
+  padding: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.combo-extra:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dish.combo-extra{
+  display: flex;
+  flex-direction: column;
+}
+
+.dish.combo-extra .dish-price{
+  margin-top: auto;
+}
+
+.dish.combo-extra .dish-title{
+  min-height: 54px;
+}
+
+.dish.combo-extra .dish-description{
+  min-height: 44px;
+}
+
+.combo-extra .combo-cover {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 85px;
+  gap: 6px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.combo-extra .combo-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.combo-extra .combo-cover img:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.combo-extra .combo-cover.is-2 {
+  grid-template-columns: 1.3fr 0.9fr;
+}
+
+@media (max-width: 520px){
+  .combo-extra .combo-cover{
+    padding-top: 40px;
+  }
+
+  .combo-extra .dish-badge{
+    top: 8px;
+    left: 10px;
+  }
+
+  .combo-extra .dish-heart{
+    top: 8px;
+    right: 10px;
+  }
+}
+
+@media (min-width: 521px){
+  .combo-extra .combo-cover{
+    padding-top: 34px;
+  }
+}
