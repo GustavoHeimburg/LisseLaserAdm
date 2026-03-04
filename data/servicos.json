@@ -11,6 +11,13 @@
     "descricao": "Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.",
     "preco": "39.99",
     "imagem": "src/images/linhaalba.png"
+  },
+
+  {
+    "nome": "AXILA",
+    "descricao": "Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.",
+    "preco": "59.99",
+    "imagem": "src/images/axila.png"
   }
 
 ]

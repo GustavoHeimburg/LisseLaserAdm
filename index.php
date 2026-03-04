@@ -191,22 +191,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
             <div class="dish">
                 <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/linhaalba.png" class="rosto-photo" alt="Depilação a laser feminina na linha alba em Xanxerê">
-                <h3 class="dish-title">LINHA ALBA</h3>
-                <span class="dish-description">Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(80+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$39,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
-
-            <div class="dish">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/axila.png" class="rosto-photo" alt="Depilação a laser feminina na axila em Xanxerê">
+                    <img src="src/images/axila.png" class="rosto-photo" alt="Depilação a laser feminina na axila em Xanxerê">
                 <h3 class="dish-title">AXILA</h3>
                 <span class="dish-description">Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.</span>
                 <div class="dish-rate">
