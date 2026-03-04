@@ -139,33 +139,36 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
     </section>
 </main>
+<section id="feminino" class="menu-section">
+    <h2 class="section-title">LISSE</h2>
+    <h3 class="section-subtitle">Conheça nossos serviços</h3>
 
-    <section id="feminino" class="menu-section">
-        <h2 class="section-title">LISSE</h2>
-        <h3 class="section-subtitle">Conheça nossos serviços</h3>
+    <div class="linha-categoria">
+        <span class="linha"></span>
+        <p class="categoria-texto">DEPILAÇÃO FEMININA</p>
+        <span class="linha"></span>
+    </div>
 
-        <div class="linha-categoria">
-            <span class="linha"></span>
-            <p class="categoria-texto">DEPILAÇÃO FEMININA</p>
-            <span class="linha"></span>
-        </div>
+    <div class="dishes-grid" id="dishes-feminino">
 
-        <div class="dishes-grid" id="dishes-feminino">
-            <?php foreach ($servicos as $servico) { ?>
+        <?php foreach ($servicos as $servico): ?>
+            <?php if ($servico['categoria'] === 'feminino'): ?>
 
                 <div class="dish">
                     <div class="dish-heart">
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="<?php echo $servico['imagem']; ?>"
-                         class="rosto-photo"
-                         alt="Depilação a laser feminina na <?php echo strtolower($servico['nome']); ?> em Xanxerê">
+                    <?php if (isset($servico['imagem'])): ?>
+                        <img src="<?= $servico['imagem']; ?>"
+                             class="rosto-photo"
+                             alt="<?= $servico['nome']; ?>">
+                    <?php endif; ?>
 
-                    <h3 class="dish-title"><?php echo $servico['nome']; ?></h3>
+                    <h3 class="dish-title"><?= $servico['nome']; ?></h3>
 
                     <span class="dish-description">
-                        <?php echo $servico['descricao']; ?>
+                        <?= $servico['descricao']; ?>
                     </span>
 
                     <div class="dish-rate">
@@ -179,240 +182,35 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
                     <div class="dish-price">
                         <h4>
-                            R$<?php echo number_format($servico['preco'], 2, ',', '.'); ?>
+                            R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                         </h4>
+
                         <button class="btn-default add-to-cart">
                             <i class="fa-solid fa-basket-shopping"></i>
                         </button>
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
 
-            <div class="dish">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/axila.png" class="rosto-photo" alt="Depilação a laser feminina na axila em Xanxerê">
-                <h3 class="dish-title">AXILA</h3>
-                <span class="dish-description">Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(95+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$59,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+    </div>
 
-            <div class="dish">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/buço.png" class="rosto-photo" alt="Depilação a laser feminina no buço em Xanxerê">
-                <h3 class="dish-title">BUÇO</h3>
-                <span class="dish-description">Remoção precisa dos pelos do buço, deixando a região mais lisa e com aparência uniforme.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(110+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$39,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
-        </div>
+    <!-- BOTÕES DEVEM FICAR AQUI DENTRO -->
 
-        <div class="ver-mais-wrapper">
-            <button class="btn-default btn-ver-mais" data-target="#feminino-extra">
-                Ver mais
-            </button>
-        </div>
+    <div class="ver-mais-wrapper">
+        <button class="btn-default btn-ver-mais" data-target="#feminino-extra">
+            Ver mais
+        </button>
+    </div>
 
-        <div id="feminino-extra" class="extra-container">
-            <div class="dishes-grid">
+    <div class="ver-mais-wrapper">
+        <button class="btn-default btn-ver-menos" data-target="#feminino-extra">
+            Ver menos
+        </button>
+    </div>
 
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/virilhacavadaa.png" class="rosto-photo" alt="Depilação a laser feminina na virilha em Xanxerê">
-                    <h3 class="dish-title">VIRILHA CAVADA</h3>
-                    <span class="dish-description">Remoção uniforme que valoriza a estética da região, garantindo mais conforto e cuidado com a pele.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(60+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$69,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/facial.png" class="rosto-photo" alt="Depilação a laser feminina no rosto em Xanxerê">
-                    <h3 class="dish-title">ROSTO</h3>
-                    <span class="dish-description">Tratamento completo para remoção dos pelos faciais, deixando a pele mais limpa, suave e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(55+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$49,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/intimacompleta.png" class="rosto-photo" alt="Depilação a laser feminina na região intima em Xanxerê">
-                    <h3 class="dish-title">INTIMA COMPLETA</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos da região íntima, proporcionando conforto, higiene e cuidado com a pele.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(120+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$69,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/lombar.png" class="rosto-photo" alt="Depilação a laser feminina na lombar em Xanxerê">
-                    <h3 class="dish-title">LOMBAR</h3>
-                    <span class="dish-description">Remoção dos pelos da região lombar, garantindo um visual mais limpo e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(45+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$39,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/queixo.png" class="rosto-photo" alt="Depilação a laser feminina no queixo em Xanxerê">
-                    <h3 class="dish-title">QUEIXO</h3>
-                    <span class="dish-description">Remoção precisa dos pelos do queixo, deixando a pele mais lisa e com aparência uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(50+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$39,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/antebraçoo.png" class="rosto-photo" alt="Depilação a laser feminina no antebraço em Xanxerê">
-                    <h3 class="dish-title">ANTEBRAÇO</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos do antebraço, proporcionando um visual mais limpo e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(30+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$59,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/braçofem.png" class="rosto-photo" alt="Depilação a laser feminina no braço em Xanxerê">
-                    <h3 class="dish-title">BRAÇO</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos dos braços, deixando a pele mais lisa e com aparência uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(80+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/abdomen.png" class="rosto-photo" alt="Depilação a laser feminina no abdômem em Xanxerê">
-                    <h3 class="dish-title">ABDÔMEN</h3>
-                    <span class="dish-description">Remoção dos pelos do abdômen, proporcionando um visual mais limpo e uniforme à região.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(78+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$69,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/costas33.png" class="rosto-photo" alt="Depilação a laser feminina nas costas em Xanxerê">
-                    <h3 class="dish-title">COSTAS</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos das costas, garantindo uma aparência mais limpa e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(68+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/pernas.png" class="rosto-photo" alt="Depilação a laser feminina na perna em Xanxerê">
-                    <h3 class="dish-title">MEIA PERNA</h3>
-                    <span class="dish-description">Remoção dos pelos da meia perna, deixando a pele mais lisa e com aspecto uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(105+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/pernascompletas.jpeg" class="rosto-photo" alt="Depilação a laser feminina na perna em Xanxerê">
-                    <h3 class="dish-title">PERNA INTEIRA</h3>
-                    <span class="dish-description">Remoção completa dos pelos das pernas, garantindo uma pele mais lisa e visual uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(137+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/gluteos.png" class="rosto-photo" alt="Depilação a laser feminina no gluteo em Xanxerê">
-                    <h3 class="dish-title">GLUTEO</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos da região do glúteo, proporcionando conforto e um visual mais uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(90+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$59,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="ver-mais-wrapper">
-                <button class="btn-default btn-ver-menos" data-target="#feminino-extra">
-                    Ver menos
-                </button>
-            </div>
-        </div>
-    </section>
+</section>
 
     <section id="masculino" class="menu-section">
         <div class="linha-categoriam">
@@ -422,20 +220,63 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
 
         <div class="dishes-grid" id="dishes-masculino">
-            <div class="dish combo-extraa">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/contronobarba.jpeg" class="rosto-photo" alt="Depilação a laser masculina na barba em Xanxerê">
-                <h3 class="dish-title">CONTORNO DA BARBA</h3>
-                <span class="dish-description">Remoção precisa dos pelos para definir o contorno da barba, garantindo um visual mais alinhado e uniforme.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(83+)</span>
+
+        <?php foreach ($servicos as $servico): ?>
+            <?php if ($servico['categoria'] === 'masculino'): ?>
+
+                <div class="dish combo-extraa">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <?php if (isset($servico['imagem'])): ?>
+                        <img src="<?= $servico['imagem'] ?>"
+                             class="rosto-photo"
+                             alt="<?= $servico['nome'] ?>">
+                    <?php endif; ?>
+
+                    <?php if (isset($servico['imagens'])): ?>
+                        <div class="combo-cover">
+                            <?php foreach ($servico['imagens'] as $img): ?>
+                                <img src="<?= $img ?>"
+                                     class="rosto-photo"
+                                     alt="<?= $servico['nome'] ?>">
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <h3 class="dish-title">
+                        <?= $servico['nome'] ?>
+                    </h3>
+
+                    <span class="dish-description">
+                        <?= $servico['descricao'] ?>
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(83+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>
+                            R$<?= number_format((float)$servico['preco'], 2, ',', '.') ?>
+                        </h4>
+
+                        <button class="btn-default add-to-cart">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="dish-price">
-                    <h4>R$49,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        </div>
 
             <div class="dish combo-extraa">
                 <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
