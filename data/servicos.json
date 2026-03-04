@@ -4,5 +4,13 @@
     "descricao": "Remoção precisa e segura dos pelos ao redor da aréola, proporcionando um aspecto mais limpo e delicado à região.",
     "preco": "39.99",
     "imagem": "src/images/aureola.png"
+  },
+
+  {
+    "nome": "LINHA ALBA",
+    "descricao": "Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.",
+    "preco": "39.99",
+    "imagem": "src/images/linhaalba.png"
   }
+
 ]
