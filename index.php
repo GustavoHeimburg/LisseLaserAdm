@@ -160,9 +160,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                     </div>
 
                     <?php if (isset($servico['imagem'])): ?>
-                        <img src="<?= $servico['imagem']; ?>"
-                             class="rosto-photo"
-                             alt="<?= $servico['nome']; ?>">
+                        <img src="<?= $servico['imagem']; ?>" class="rosto-photo" alt="<?= $servico['nome']; ?>">
                     <?php endif; ?>
 
                     <h3 class="dish-title"><?= $servico['nome']; ?></h3>
@@ -196,8 +194,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
     </div>
 
-    <!-- BOTÕES DEVEM FICAR AQUI DENTRO -->
-
     <div class="ver-mais-wrapper">
         <button class="btn-default btn-ver-mais" data-target="#feminino-extra">
             Ver mais
@@ -212,14 +208,16 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 </section>
 
-    <section id="masculino" class="menu-section">
-        <div class="linha-categoriam">
-            <span class="linham"></span>
-            <p class="categoria-textom">DEPILAÇÃO MASCULINA</p>
-            <span class="linham"></span>
-        </div>
 
-        <div class="dishes-grid" id="dishes-masculino">
+<section id="masculino" class="menu-section">
+
+    <div class="linha-categoriam">
+        <span class="linham"></span>
+        <p class="categoria-textom">DEPILAÇÃO MASCULINA</p>
+        <span class="linham"></span>
+    </div>
+
+    <div class="dishes-grid" id="dishes-masculino">
 
         <?php foreach ($servicos as $servico): ?>
             <?php if ($servico['categoria'] === 'masculino'): ?>
@@ -230,27 +228,15 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                     </div>
 
                     <?php if (isset($servico['imagem'])): ?>
-                        <img src="<?= $servico['imagem'] ?>"
-                             class="rosto-photo"
-                             alt="<?= $servico['nome'] ?>">
-                    <?php endif; ?>
-
-                    <?php if (isset($servico['imagens'])): ?>
-                        <div class="combo-cover">
-                            <?php foreach ($servico['imagens'] as $img): ?>
-                                <img src="<?= $img ?>"
-                                     class="rosto-photo"
-                                     alt="<?= $servico['nome'] ?>">
-                            <?php endforeach; ?>
-                        </div>
+                        <img src="<?= $servico['imagem']; ?>" class="rosto-photo" alt="<?= $servico['nome']; ?>">
                     <?php endif; ?>
 
                     <h3 class="dish-title">
-                        <?= $servico['nome'] ?>
+                        <?= $servico['nome']; ?>
                     </h3>
 
                     <span class="dish-description">
-                        <?= $servico['descricao'] ?>
+                        <?= $servico['descricao']; ?>
                     </span>
 
                     <div class="dish-rate">
@@ -259,12 +245,12 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <span>(83+)</span>
+                        <span>(67+)</span>
                     </div>
 
                     <div class="dish-price">
                         <h4>
-                            R$<?= number_format((float)$servico['preco'], 2, ',', '.') ?>
+                            R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                         </h4>
 
                         <button class="btn-default add-to-cart">
@@ -276,541 +262,87 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             <?php endif; ?>
         <?php endforeach; ?>
 
-        </div>
+    </div>
 
-            <div class="dish combo-extraa">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/barba.jpeg" class="rosto-photo" alt="Depilação a laser masculina na barba em Xanxerê">
-                <h3 class="dish-title">BARBA COMPLETA</h3>
-                <span class="dish-description">Remoção completa dos pelos da barba, proporcionando uma pele mais lisa e aparência uniforme.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(59+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$69,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+</section>
 
-            <div class="dish combo-extraa">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/axila.jpeg" class="rosto-photo" alt="Depilação a laser masculina na axila em Xanxerê">
-                <h3 class="dish-title">AXILA</h3>
-                <span class="dish-description">Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(94+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$69,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
 
-            <div class="dish combo-extraa">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <img src="src/images/peitoral.jpeg" class="rosto-photo" alt="Depilação a laser masculina no peito em Xanxerê">
-                <h3 class="dish-title">PEITO</h3>
-                <span class="dish-description">Remoção eficaz dos pelos do peito, garantindo uma aparência mais limpa e uniforme.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span>(115+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$59,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
-        </div>
+<section id="combos" class="menu-section">
 
-        <div class="ver-mais-wrapper">
-            <button class="btn-default btn-ver-mais" data-target="#masculino-extra">
-                Ver mais
-            </button>
-        </div>
+    <div class="linha-categoria">
+        <span class="linha"></span>
+        <p class="categoria-texto">COMBOS</p>
+        <span class="linha"></span>
+    </div>
 
-        <div id="masculino-extra" class="extra-container">
-            <div class="dishes-grid">
+    <div class="combo-filters" role="tablist" aria-label="Filtrar combos">
+        <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
+        <button class="filter-btn" data-filter="feminino" type="button">Feminino</button>
+        <button class="filter-btn" data-filter="masculino" type="button">Masculino</button>
+    </div>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/abdomem.jpeg" class="rosto-photo" alt="Depilação a laser masculina no abdômen em Xanxerê">
-                    <h3 class="dish-title">ABDÔMEN</h3>
-                    <span class="dish-description">Remoção dos pelos do abdômen, proporcionando um visual mais limpo e uniforme à região.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(95+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$79,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+    <div class="dishes-grid" id="dishes-combos">
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/costasmasculinas.jpeg" class="rosto-photo" alt="Depilação a laser masculina nas costas em Xanxerê">
-                    <h3 class="dish-title">COSTAS</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos das costas, garantindo uma aparência mais limpa e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(130+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+<?php foreach ($servicos as $servico): ?>
+<?php if ($servico['categoria'] === 'combos'): ?>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/lombar.jpeg" class="rosto-photo" alt="Depilação a laser masculina na lombar em Xanxerê">
-                    <h3 class="dish-title">LOMBAR</h3>
-                    <span class="dish-description">Remoção dos pelos da região lombar, proporcionando um visual mais limpo e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(70+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$49,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+<?php $publico = $servico['publico'] ?? 'unissex'; ?>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/virilhamasc.jpeg" class="rosto-photo" alt="Depilação a laser masculina na virilha em Xanxerê">
-                    <h3 class="dish-title">VIRILHA SOMENTE FRENTE</h3>
-                    <span class="dish-description">Remoção dos pelos da parte frontal da virilha, garantindo um visual mais limpo, uniforme e confortável.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(65+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$99,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+<div class="dish combo-extra" data-publico="<?= $publico ?>">
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/intima.jpeg" class="rosto-photo" alt="Depilação a laser masculina na região intima em Xanxerê">
-                    <h3 class="dish-title">ÍNTIMA COMPLETA</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos da região íntima, proporcionando conforto, higiene e cuidado com a pele.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(140+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$129,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+    <div class="dish-heart">
+        <i class="fa-solid fa-heart"></i>
+    </div>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/Gluteo.jpeg" class="rosto-photo" alt="Depilação a laser masculina no gluteo em Xanxerê">
-                    <h3 class="dish-title">GLÚTEO</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos da região do glúteo, proporcionando conforto e um visual mais uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(100+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$99,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+    <span class="dish-badge <?= $publico ?>">
+        <?= ucfirst($publico) ?>
+    </span>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/antebraçomascs.jpeg" class="rosto-photo" alt="Depilação a laser masculina no antebraço em Xanxerê">
-                    <h3 class="dish-title">ANTEBRAÇO</h3>
-                    <span class="dish-description">Remoção eficaz dos pelos do antebraço, proporcionando um visual mais limpo e uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(80+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$49,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+    <div class="combo-cover">
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/meiaperna.jpeg" class="rosto-photo" alt="Depilação a laser masculina na perna em Xanxerê">
-                    <h3 class="dish-title">MEIA PERNA</h3>
-                    <span class="dish-description">Remoção dos pelos da meia perna, proporcionando uma pele mais lisa e aparência uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(60+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$79,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+        <?php if(isset($servico['imagens'])): ?>
+            <?php foreach ($servico['imagens'] as $img): ?>
+                <img src="<?= $img ?>" alt="<?= $servico['nome'] ?>">
+            <?php endforeach; ?>
+        <?php endif; ?>
 
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/pernascompletas.jpeg" class="rosto-photo" alt="Depilação a laser masculina na perna em Xanxerê">
-                    <h3 class="dish-title">PERNA INTEIRA</h3>
-                    <span class="dish-description">Remoção completa dos pelos das pernas, garantindo uma pele mais lisa e visual uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(165+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$79,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                
-                <div class="dish combo-extraa">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <img src="src/images/braço.jpeg" class="rosto-photo" alt="Depilação a laser masculina no braço em Xanxerê">
-                    <h3 class="dish-title">BRAÇO COMPLETO</h3>
-                    <span class="dish-description">Remoção completa dos pelos dos braços, proporcionando uma pele mais lisa e aparência uniforme.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(74+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$89,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
+    </div>
 
-            </div>
+    <h3 class="dish-title">
+        <?= $servico['nome'] ?>
+    </h3>
 
-            <div class="ver-mais-wrapper">
-                <button class="btn-default btn-ver-menos" data-target="#masculino-extra">
-                    Ver menos
-                </button>
-            </div>
-        </div>
-    </section>
+    <span class="dish-description">
+        <?= $servico['descricao'] ?>
+    </span>
 
-    <section id="combos" class="menu-section">
+    <div class="dish-rate">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <span class="dish-reviews">(100+)</span>
+    </div>
 
-        <div class="linha-categoria">
-            <span class="linha"></span>
-            <p class="categoria-texto">COMBOS</p>
-            <span class="linha"></span>
-        </div>
+    <div class="dish-price">
+        <h4>
+            R$<?= number_format((float)$servico['preco'], 2, ',', '.') ?>
+        </h4>
 
-        <div class="combo-filters" role="tablist" aria-label="Filtrar combos">
-            <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
-            <button class="filter-btn" data-filter="feminino" type="button">Feminino</button>
-            <button class="filter-btn" data-filter="masculino" type="button">Masculino</button>
-        </div>
+        <button class="btn-default add-to-cart">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </button>
+    </div>
 
-        <div class="dishes-grid" id="dishes-combos">
-            <div class="dish combo-extra" data-publico="masculino">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <span class="dish-badge masculino">Masculino</span>
-                <div class="combo-cover">
-                    <img src="src/images/axila.jpeg" alt="Axila">
-                    <img src="src/images/intima.jpeg" alt="Íntima completa">
-                    <img src="src/images/meiaperna.jpeg" alt="Meia perna">
-                </div>
-                <h3 class="dish-title">AXILA + ÍNTIMA COMPLETA + MEIA PERNA</h3>
-                <span class="dish-description">Combo completo para mais praticidade e conforto, garantindo uma pele mais lisa, uniforme e bem cuidada.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span class="dish-reviews">(140+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$134,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+</div>
 
-            <div class="dish combo-extra" data-publico="masculino">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <span class="dish-badge masculino">Masculino</span>
-                <div class="combo-cover is-2">
-                    <img src="src/images/axila.jpeg" alt="Axila">
-                    <img src="src/images/intima.jpeg" alt="Íntima completa">
-                </div>
-                <h3 class="dish-title">AXILA + ÍNTIMA COMPLETA</h3>
-                <span class="dish-description">Combo ideal para quem busca praticidade e conforto, proporcionando uma pele mais lisa, uniforme e bem cuidada.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span class="dish-reviews">(110+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$149,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+<?php endif; ?>
+<?php endforeach; ?>
 
-            <div class="dish combo-extra" data-publico="masculino">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <span class="dish-badge masculino">Masculino</span>
-                <div class="combo-cover">
-                    <img src="src/images/axila.jpeg" alt="Axila">
-                    <img src="src/images/virilhamasc.jpeg" alt="Íntima completa">
-                </div>
-                <h3 class="dish-title">AXILA + ÍNTIMA SOMENTE FRENTE</h3>
-                <span class="dish-description">Combo prático para manter a pele mais limpa e confortável, com resultado uniforme nas duas regiões.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span class="dish-reviews">(85+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$199,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
+    </div>
 
-            <div class="dish combo-extra" data-publico="masculino">
-                <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                <span class="dish-badge masculino">Masculino</span>
-                <div class="combo-cover">
-                    <img src="src/images/axila.jpeg" alt="Axila">
-                    <img src="src/images/peitoral.jpeg" alt="Íntima completa">
-                    <img src="src/images/abdomem.jpeg" alt="Meia perna">
-                </div>
-                <h3 class="dish-title">AXILA + PEITO + ABDÔMEN</h3>
-                <span class="dish-description">Combo completo para um visual mais limpo e uniforme, garantindo praticidade e conforto no cuidado corporal.</span>
-                <div class="dish-rate">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    <span class="dish-reviews">(160+)</span>
-                </div>
-                <div class="dish-price">
-                    <h4>R$179,99</h4>
-                    <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="ver-mais-wrapper">
-            <button class="btn-default btn-ver-mais" data-target="#combos-extra">
-                Ver mais
-            </button>
-        </div>
-
-        <div id="combos-extra" class="extra-container">
-            <div class="dishes-grid">
-
-                <div class="dish combo-extra" data-publico="masculino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge masculino">Masculino</span>
-                    <img src="src/images/corpotodomasc.jpeg " class="rosto-photo" alt="">
-                    <h3 class="dish-title">CORPO INTEIRO</h3>
-                    <span class="dish-description">Tratamento completo para remoção dos pelos do corpo, proporcionando uma pele mais lisa, uniforme e bem cuidada.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(95+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$350,00</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/intimacompleta.png" alt="Axila">
-                        <img src="src/images/pernas.png" alt="Íntima completa">
-                    </div>
-                    <h3 class="dish-title">INTIMA + PERNA</h3>
-                    <span class="dish-description">Combo ideal para quem busca praticidade, garantindo uma pele mais lisa, uniforme e confortável nas duas regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(85+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$129,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.png" alt="Axila">
-                        <img src="src/images/intimacompleta.png" alt="Íntima completa">
-                        <img src="src/images/pernascompletas.jpeg" alt="Meia perna">
-                    </div>
-                    <h3 class="dish-title">AXILA + ÍNTIMA + PERNA INTEIRA</h3>
-                    <span class="dish-description">Combo completo para quem busca praticidade e cuidado total, garantindo uma pele mais lisa, uniforme e confortável.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(95+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$189,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="masculino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge masculino">Masculino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.jpeg" alt="Axila">
-                        <img src="src/images/peitoral.jpeg" alt="Íntima completa">
-                        <img src="src/images/costas.jpeg" alt="Meia perna">
-                    </div>
-                    <h3 class="dish-title">AXILA + PEITO + COSTAS</h3>
-                    <span class="dish-description">Combo ideal para um visual mais limpo e equilibrado, oferecendo praticidade e conforto no cuidado corporal.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(70+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$189,90</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.png" alt="Axila">
-                        <img src="src/images/intimacompleta.png" alt="Íntima completa">
-                    </div>
-                    <h3 class="dish-title">AXILA + ÍNTIMA COMPLETA</h3>
-                    <span class="dish-description">Combo prático para quem busca conforto e cuidado, garantindo uma pele mais lisa e uniforme nas duas regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(120+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$99,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="masculino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge masculino">Masculino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.jpeg" alt="Axila">
-                        <img src="src/images/intima.jpeg" alt="Íntima completa">
-                        <img src="src/images/pernascompletas.jpeg" alt="Meia perna">
-                    </div>
-                    <h3 class="dish-title">AXILA + ÍNTIMA FRENTE + PERNA INTEIRA</h3>
-                    <span class="dish-description">Combo completo para quem busca praticidade e conforto, proporcionando uma pele mais lisa, uniforme e bem cuidada.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(168+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$204,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <!--COMBOS FEMININOS-->
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.png" alt="Axila">
-                        <img src="src/images/buço.png" alt="Buço">
-                    </div>
-                    <h3 class="dish-title">AXILA + BUÇO</h3>
-                    <span class="dish-description">Combo prático para manter a pele mais lisa e uniforme, com cuidado eficiente nas duas regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(95+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$79,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.png" alt="Axila">
-                        <img src="src/images/buço.png" alt="Íntima completa">
-                        <img src="src/images/intimacompleta.png" alt="Meia perna">
-                    </div>
-                    <h3 class="dish-title">AXILA + BUÇO + INTIMA COMPLETA</h3>
-                    <span class="dish-description">Combo completo para quem busca praticidade e cuidado, garantindo uma pele mais lisa, uniforme e confortável nas três regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(130+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$114,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/intimacompleta.png" alt="Axila">
-                        <img src="src/images/meiaperna.jpeg" alt="Íntima completa">
-                    </div>
-                    <h3 class="dish-title">INTIMA COMPLETA + MEIA PERNA</h3>
-                    <span class="dish-description">Combo ideal para quem busca praticidade e conforto, proporcionando uma pele mais lisa e uniforme nas duas regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(135+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$118,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <div class="combo-cover">
-                        <img src="src/images/axila.png" alt="Axila">
-                        <img src="src/images/intimacompleta.png" alt="Íntima completa">
-                        <img src="src/images/meiaperna.jpeg" alt="Meia perna">
-                    </div>
-                    <h3 class="dish-title">AXILA + INTIMA + MEIA PERNA</h3>
-                    <span class="dish-description">Combo prático para quem busca conforto e praticidade, garantindo uma pele mais lisa e uniforme nas três regiões.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(79+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$149,99</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-                <div class="dish combo-extra" data-publico="feminino">
-                    <div class="dish-heart"><i class="fa-solid fa-heart"></i></div>
-                    <span class="dish-badge feminino">Feminino</span>
-                    <img src="src/images/corpotodofem.jpeg" class="" alt="">
-                    <h3 class="dish-title">CORPO INTEIRO</h3>
-                    <span class="dish-description">Tratamento completo para remoção dos pelos do corpo, proporcionando uma pele mais lisa, uniforme e bem cuidada.</span>
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="dish-reviews">(180+)</span>
-                    </div>
-                    <div class="dish-price">
-                        <h4>R$250,00</h4>
-                        <button class="btn-default add-to-cart"><i class="fa-solid fa-basket-shopping"></i></button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="ver-mais-wrapper">
-                <button class="btn-default btn-ver-menos" data-target="#combos-extra">
-                    Ver menos
-                </button>
-            </div>
-        </div>
-    </section>
+</section>
 
     <section id="testimonials">
         <img src="src/images/Sem%20título.png" id="testimonial_chef" alt="">

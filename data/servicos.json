@@ -242,6 +242,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + ÍNTIMA COMPLETA + MEIA PERNA",
     "descricao": "Combo completo para mais praticidade e conforto, garantindo uma pele mais lisa, uniforme e bem cuidada.",
     "preco": "134.99",
@@ -254,6 +255,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + ÍNTIMA COMPLETA",
     "descricao": "Combo ideal para quem busca praticidade e conforto, proporcionando uma pele mais lisa, uniforme e bem cuidada.",
     "preco": "149.99",
@@ -265,6 +267,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + ÍNTIMA SOMENTE FRENTE",
     "descricao": "Combo prático para manter a pele mais limpa e confortável, com resultado uniforme nas duas regiões.",
     "preco": "199.99",
@@ -276,6 +279,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + PEITO + ABDÔMEN",
     "descricao": "Combo completo para um visual mais limpo e uniforme, garantindo praticidade e conforto no cuidado corporal.",
     "preco": "179.99",
@@ -288,6 +292,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "CORPO INTEIRO",
     "descricao": "Tratamento completo para remoção dos pelos do corpo, proporcionando uma pele mais lisa, uniforme e bem cuidada.",
     "preco": "350.00",
@@ -296,6 +301,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "INTIMA + PERNA",
     "descricao": "Combo ideal para quem busca praticidade, garantindo uma pele mais lisa, uniforme e confortável nas duas regiões.",
     "preco": "129.99",
@@ -307,6 +313,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "AXILA + ÍNTIMA + PERNA INTEIRA",
     "descricao": "Combo completo para quem busca praticidade e cuidado total, garantindo uma pele mais lisa, uniforme e confortável.",
     "preco": "189.99",
@@ -319,6 +326,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + PEITO + COSTAS",
     "descricao": "Combo ideal para um visual mais limpo e equilibrado, oferecendo praticidade e conforto no cuidado corporal.",
     "preco": "189.99",
@@ -331,6 +339,7 @@
 
   {
     "categoria": "combos",
+    "publico": "masculino",
     "nome": "AXILA + ÍNTIMA FRENTE + PERNA INTEIRA",
     "descricao": "Combo completo para quem busca praticidade e conforto, proporcionando uma pele mais lisa, uniforme e bem cuidada.",
     "preco": "204.99",
@@ -343,6 +352,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "AXILA + BUÇO",
     "descricao": "Combo prático para manter a pele mais lisa e uniforme, com cuidado eficiente nas duas regiões.",
     "preco": "79.99",
@@ -354,6 +364,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "AXILA + BUÇO + INTIMA COMPLETA",
     "descricao": "Combo completo para quem busca praticidade e cuidado, garantindo uma pele mais lisa, uniforme e confortável nas três regiões.",
     "preco": "114.99",
@@ -367,6 +378,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "INTIMA COMPLETA + MEIA PERNA",
     "descricao": "Combo ideal para quem busca praticidade e conforto, proporcionando uma pele mais lisa e uniforme nas duas regiões.",
     "preco": "118.99",
@@ -378,6 +390,7 @@
 
   {
     "categoria": "combos",
+    "publico": "feminino",
     "nome": "AXILA + INTIMA + MEIA PERNA",
     "descricao": "Combo ideal para quem busca praticidade e conforto, proporcionando uma pele mais lisa e uniforme nas duas regiões.",
     "preco": "149.99",
