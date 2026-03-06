@@ -264,8 +264,18 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
     </div>
 
-</section>
+</div>
 
+<div class="ver-mais-wrapper">
+
+    <button class="btn-default btn-ver-mais">
+        Ver mais
+    </button>
+
+    <button class="btn-default btn-ver-menos">
+        Ver menos
+    </button>
+</section>
 
 <section id="combos" class="menu-section">
 
@@ -341,7 +351,17 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 <?php endforeach; ?>
 
     </div>
+<div class="ver-mais-wrapper">
 
+    <button class="btn-default btn-ver-mais">
+        Ver mais
+    </button>
+
+    <button class="btn-default btn-ver-menos">
+        Ver menos
+    </button>
+
+</div>
 </section>
 
     <section id="testimonials">

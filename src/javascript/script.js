@@ -75,146 +75,117 @@ $(document).ready(function () {
     });
   }
 
-  function showTarget(targetSelector, btnVerMais) {
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-
-    target.classList.add("show");
-    if (btnVerMais) btnVerMais.style.display = "none";
-  }
-
-  function hideTarget(targetSelector) {
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-
-    target.classList.remove("show");
-
-    const section = target.closest("section") || document;
-    const verMais = section.querySelector('.btn-ver-mais[data-target="' + targetSelector + '"]');
-    if (verMais) verMais.style.display = "inline-flex";
-  }
-
-  document.querySelectorAll(".btn-ver-mais").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetSelector = btn.getAttribute("data-target");
-      if (!targetSelector) return;
-      showTarget(targetSelector, btn);
-    });
-  });
-
-  document.querySelectorAll(".btn-ver-menos").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetSelector = btn.getAttribute("data-target");
-      if (!targetSelector) return;
-      hideTarget(targetSelector);
-    });
-  });
-
-  const toggleCombosBtn = document.getElementById("toggle-combos");
-  const verMaisContainer = document.getElementById("ver-mais-container");
-
-  if (toggleCombosBtn && verMaisContainer) {
-    toggleCombosBtn.addEventListener("click", () => {
-      verMaisContainer.classList.toggle("show");
-
-      toggleCombosBtn.innerText = verMaisContainer.classList.contains("show")
-        ? "Ver menos"
-        : "Ver Combos";
-    });
-  }
 });
 
-
 (function () {
+
   const section = document.querySelector("#combos");
   if (!section) return;
 
   const buttons = section.querySelectorAll(".filter-btn");
   if (!buttons.length) return;
 
-  const topGrid = section.querySelector("#dishes-combos");
-  const extraContainer = section.querySelector("#combos-extra");
-  const extraGrid = section.querySelector("#combos-extra .dishes-grid");
+  const cards = section.querySelectorAll(".dish.combo-extra");
 
-  const btnVerMaisCombos = section.querySelector('.btn-ver-mais[data-target="#combos-extra"]');
-  const verMaisWrapperCombos = btnVerMaisCombos ? btnVerMaisCombos.closest(".ver-mais-wrapper") : null;
+  function applyFilter(filter) {
 
-  const allCards = [
-    ...Array.from(topGrid.querySelectorAll(".dish.combo-extra")),
-    ...Array.from(extraGrid.querySelectorAll(".dish.combo-extra"))
-  ];
+    cards.forEach(card => {
 
-  allCards.forEach(card => {
-    if (!card.dataset.home) {
-      card.dataset.home = card.closest("#dishes-combos") ? "top" : "extra";
-    }
-  });
+      const publico = (card.dataset.publico || "").toLowerCase();
 
-  function move(card, dest) {
-    dest.appendChild(card);
-  }
+      if (filter === "todos" || publico === filter) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
 
-  function show(card) {
-    card.hidden = false;
-  }
-
-  function hide(card) {
-    card.hidden = true;
-  }
-
-function applyFilter(filter) {
-  if (!topGrid || !extraGrid) return;
-
-  if (filter === "todos") {
-    allCards.forEach(card => {
-      (card.dataset.home === "top" ? topGrid : extraGrid).appendChild(card);
-      card.hidden = false;
     });
 
-    if (verMaisWrapperCombos) verMaisWrapperCombos.style.display = "";
-    if (btnVerMaisCombos) btnVerMaisCombos.style.display = "inline-flex";
-
-    if (extraContainer) {
-      extraContainer.style.display = "";
-      extraContainer.classList.remove("show");
-    }
-
-    return;
   }
-
-  if (extraContainer) extraContainer.style.display = "none";
-  if (verMaisWrapperCombos) verMaisWrapperCombos.style.display = "none";
-  if (btnVerMaisCombos) btnVerMaisCombos.style.display = "none";
-
-  const match = [];
-  const rest = [];
-
-  allCards.forEach(card => {
-    const publico = (card.dataset.publico || "").toLowerCase();
-    if (publico === filter) match.push(card);
-    else rest.push(card);
-  });
-
-  match.forEach(card => {
-    topGrid.appendChild(card);
-    card.hidden = false;
-  });
-
-  rest.forEach(card => {
-    extraGrid.appendChild(card);
-    card.hidden = true;
-  });
-}
-
 
   buttons.forEach(btn => {
+
     btn.addEventListener("click", () => {
+
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
+
       applyFilter(btn.dataset.filter);
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+
     });
+
   });
 
-  applyFilter("todos");
 })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const grids = [
+    "dishes-feminino",
+    "dishes-masculino",
+    "dishes-combos"
+  ];
+
+  grids.forEach(gridId => {
+
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+
+    const cards = grid.querySelectorAll(".dish");
+
+    const section = grid.closest("section");
+
+    const btnMais = section.querySelector(".btn-ver-mais");
+    const btnMenos = section.querySelector(".btn-ver-menos");
+
+    // esconder depois do 4
+    cards.forEach((card, index) => {
+      if (index >= 4) {
+        card.style.display = "none";
+      }
+    });
+
+    if (btnMenos) btnMenos.style.display = "none";
+
+    if (btnMais) {
+
+      btnMais.addEventListener("click", () => {
+
+        grid.classList.add("expanded");
+
+        cards.forEach(card => {
+          card.style.display = "";
+        });
+
+        btnMais.style.display = "none";
+        if (btnMenos) btnMenos.style.display = "inline-flex";
+
+      });
+
+    }
+
+    if (btnMenos) {
+
+        btnMenos.addEventListener("click", () => {
+
+        grid.classList.remove("expanded");
+
+        cards.forEach((card, index) => {
+
+        if (index >= 4) {
+        card.style.display = "none";
+        }
+
+        });
+
+        btnMenos.style.display = "none";
+        if (btnMais) btnMais.style.display = "inline-flex";
+
+        });
+
+    }
+
+  });
+
+});
