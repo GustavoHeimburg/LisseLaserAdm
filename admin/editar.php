@@ -12,7 +12,7 @@ $servico = $servicos[$id];
 
 <h2>Editar Serviço</h2>
 
-<form action="salvar.php" method="POST">
+<form action="salvar.php" method="POST" enctype="multipart/form-data">
 
 <input type="hidden" name="id" value="<?= $id ?>">
 
@@ -26,7 +26,20 @@ Preço<br>
 <input type="text" name="preco" value="<?= $servico['preco'] ?>"><br><br>
 
 Categoria<br>
-<input type="text" name="categoria" value="<?= $servico['categoria'] ?>"><br><br>
+<select name="categoria">
+
+<option value="feminino" <?= $servico['categoria']=="feminino"?"selected":"" ?>>Feminino</option>
+<option value="masculino" <?= $servico['categoria']=="masculino"?"selected":"" ?>>Masculino</option>
+<option value="combos" <?= $servico['categoria']=="combos"?"selected":"" ?>>Combos</option>
+
+</select>
+
+<br><br>
+
+Nova imagem<br>
+<input type="file" name="imagem">
+
+<br><br>
 
 <button type="submit">Salvar</button>
 
