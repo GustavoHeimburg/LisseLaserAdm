@@ -177,6 +177,8 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.display = "none";
         }
 
+
+
         });
 
         btnMenos.style.display = "none";
