@@ -13,24 +13,22 @@ $imagemPath = "";
 
 if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0){
 
-$nomeImagem = time() . "_" . $_FILES['imagem']['name'];
+    $nomeImagem = time() . "_" . $_FILES['imagem']['name'];
 
-$destino = "../src/images/servicos/" . $nomeImagem;
+    $destino = "../src/images/" . $nomeImagem;
 
-move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
-$imagemPath = "../src/images/servicos/" . $nomeImagem;
-
+    // CAMINHO QUE O SITE USA
+    $imagemPath = "images/" . $nomeImagem;
 }
 
 $novoServico = [
-
-"nome" => $nome,
-"descricao" => $descricao,
-"preco" => $preco,
-"categoria" => $categoria,
-"imagem" => $imagemPath
-
+    "nome" => $nome,
+    "descricao" => $descricao,
+    "preco" => $preco,
+    "categoria" => $categoria,
+    "imagem" => $imagemPath
 ];
 
 $servicos[] = $novoServico;
@@ -38,5 +36,3 @@ $servicos[] = $novoServico;
 file_put_contents($arquivo, json_encode($servicos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 header("Location: painel.php");
-
-?>

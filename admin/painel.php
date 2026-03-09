@@ -102,7 +102,7 @@ body{
 </div>
 
 <?php if(isset($servico['imagem'])): ?>
-<img src="<?= $servico['imagem'] ?>" class="rosto-photo">
+<img src="../src/<?= $servico['imagem'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">
@@ -166,7 +166,7 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 </div>
 
 <?php if(isset($servico['imagem'])): ?>
-<img src="<?= $servico['imagem'] ?>" class="rosto-photo">
+<img src="../src/<?= $servico['imagem'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">

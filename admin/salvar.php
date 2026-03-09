@@ -15,7 +15,7 @@ if(isset($_FILES['imagem']) && $_FILES['imagem']['error']==0){
 
 $nomeImagem = time() . "_" . $_FILES['imagem']['name'];
 
-$destino = "../src/images/servicos/" . $nomeImagem;
+$destino = "../src/images/" . $nomeImagem;
 
 move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
