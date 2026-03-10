@@ -19,7 +19,6 @@ if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0){
 
     move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
-    // CAMINHO QUE O SITE USA
     $imagemPath = "images/" . $nomeImagem;
 }
 

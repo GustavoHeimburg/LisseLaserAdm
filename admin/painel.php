@@ -19,54 +19,149 @@ $servicos = json_decode(file_get_contents($arquivo), true);
 
 <style>
 
-body{
-    padding:40px;
-    background:#fafafa;
+/* GRID DOS SERVIÇOS */
+
+.dishes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-.admin-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:40px;
+/* CARD DO SERVIÇO */
+
+.dish{
+    background:white;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    text-align:center;
+    transition:0.3s;
+    position:relative;
 }
 
-.btn-add{
-    background:#E9A209;
-    color:white;
-    padding:12px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+.dish:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 22px rgba(0,0,0,0.12);
 }
+
+/* IMAGEM DO SERVIÇO */
+
+.rosto-photo{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+/* TITULO */
+
+.dish-title{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+/* DESCRIÇÃO */
+
+.dish-description{
+    font-size:14px;
+    color:#777;
+    display:block;
+    margin-bottom:10px;
+}
+
+/* AVALIAÇÃO */
+
+.dish-rate{
+    color:#E9A209;
+    margin-bottom:10px;
+}
+
+/* PREÇO */
+
+.dish-price h4{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+/* BOTÕES */
 
 .admin-actions{
     display:flex;
     gap:10px;
     justify-content:center;
-    margin-top:15px;
 }
+
+/* BOTÃO EDITAR */
 
 .btn-edit{
     background:#4CAF50;
     color:white;
-    padding:6px 12px;
+    padding:8px 14px;
     border-radius:6px;
     text-decoration:none;
+    font-size:14px;
 }
+
+/* BOTÃO DELETAR */
 
 .btn-delete{
     background:#ff4d4d;
     color:white;
-    padding:6px 12px;
+    padding:8px 14px;
     border-radius:6px;
     text-decoration:none;
+    font-size:14px;
+}
+
+/* BOTÃO NOVO SERVIÇO */
+
+.btn-add{
+    background:#E9A209;
+    color:white;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.btn-add:hover{
+    transform:scale(1.05);
+}
+
+/* CORAÇÃO */
+
+.dish-heart{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#E9A209;
+    color:white;
+    padding:6px;
+    border-radius:50%;
 }
 
 .categoria{
-    margin:50px 0 20px;
-    font-size:22px;
-    font-weight:bold;
+    font-size:28px;
+    font-weight:700;
+    margin:60px 0 25px;
+    padding:15px 20px;
+    background:linear-gradient(90deg,#fff,#f3f3f3);
+    border-left:6px solid #E9A209;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    letter-spacing:0.5px;
+}
+
+.categoria::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:3px;
+    background:#E9A209;
+    margin-top:8px;
+    border-radius:2px;
 }
 
 </style>
@@ -102,7 +197,7 @@ body{
 </div>
 
 <?php if(isset($servico['imagem'])): ?>
-<img src="../src/<?= $servico['imagem'] ?>" class="rosto-photo">
+<img src="../<?= $servico['imagem'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">
@@ -166,7 +261,7 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 </div>
 
 <?php if(isset($servico['imagem'])): ?>
-<img src="../src/<?= $servico['imagem'] ?>" class="rosto-photo">
+<img src="../<?= $servico['imagem'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">
