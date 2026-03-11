@@ -357,5 +357,12 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
+    },
+    {
+        "nome": "sada",
+        "descricao": "dad",
+        "preco": "40.99",
+        "categoria": "feminino",
+        "imagem": "..\/src\/images\/servicos\/1773244180_lombar.png"
     }
 ]

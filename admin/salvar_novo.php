@@ -13,13 +13,13 @@ $imagemPath = "";
 
 if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0){
 
-    $nomeImagem = time() . "_" . $_FILES['imagem']['name'];
+   $nomeImagem = time() . "_" . $_FILES['imagem']['name'];
 
-    $destino = "../src/images/" . $nomeImagem;
+   $destino = "../src/images/" . $nomeImagem;
 
-    move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
+   move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
-    $imagemPath = "images/" . $nomeImagem;
+   $imagemPath = "src/images/" . $nomeImagem;
 }
 
 $novoServico = [
