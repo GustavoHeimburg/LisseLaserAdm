@@ -102,6 +102,13 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             Agende aqui
         </button>
     </div>
+
+<div class="cart-icon">
+<a href="carrinho.html">
+🛒 <span id="cart-count">0</span>
+</a>
+</div>
+
 </header>
 
 <main id="content">
