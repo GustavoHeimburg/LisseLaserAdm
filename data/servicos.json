@@ -10,7 +10,7 @@
         "categoria": "feminino",
         "nome": "LINHA ALBA",
         "descricao": "Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.",
-        "preco": "59.99",
+        "preco": "80.99",
         "imagem": "src\/images\/linhaalba.png"
     },
     {
@@ -357,12 +357,5 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
-    },
-    {
-        "nome": "sada",
-        "descricao": "dad",
-        "preco": "40.99",
-        "categoria": "feminino",
-        "imagem": "..\/src\/images\/servicos\/1773244180_lombar.png"
     }
 ]

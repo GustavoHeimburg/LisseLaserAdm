@@ -19,7 +19,7 @@ $destino = "../src/images/" . $nomeImagem;
 
 move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
 
-$servicos[$id]['imagem'] = "../src/images/servicos/" . $nomeImagem;
+$servicos[$id]['imagem'] = "../src/images/" . $nomeImagem;
 
 }
 
