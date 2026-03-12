@@ -264,8 +264,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
     </div>
 
-</div>
-
 <div class="ver-mais-wrapper">
 
     <button class="btn-default btn-ver-mais">
