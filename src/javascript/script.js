@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnMais = section.querySelector(".btn-ver-mais");
     const btnMenos = section.querySelector(".btn-ver-menos");
 
-    // esconder depois do 4
     cards.forEach((card, index) => {
       if (index >= 4) {
         card.style.display = "none";
