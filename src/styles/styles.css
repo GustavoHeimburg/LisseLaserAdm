@@ -473,8 +473,7 @@ section {
   gap: 24px;
   margin-top: 24px;
 
-  overflow: hidden;
-  transition: max-height 0.6s ease;
+  overflow: visible;
 }
 
 

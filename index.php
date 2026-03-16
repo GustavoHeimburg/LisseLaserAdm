@@ -215,7 +215,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 </section>
 
-
 <section id="masculino" class="menu-section">
 
     <div class="linha-categoriam">
