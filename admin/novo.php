@@ -161,7 +161,7 @@ input[type=file]{
 
 <div class="form-group">
 <label>Imagem</label>
-<input type="file" name="imagem">
+<input type="file" name="imagens[]" multiple accept="image/*">
 </div>
 
 <button class="btn-save" type="submit">

@@ -9,25 +9,29 @@ $descricao = $_POST['descricao'];
 $preco = $_POST['preco'];
 $categoria = $_POST['categoria'];
 
-$imagemPath = "";
+$imagensSalvas = [];
 
-if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0){
+if (!empty($_FILES['imagens']['name'][0])) {
 
-   $nomeImagem = time() . "_" . $_FILES['imagem']['name'];
+    foreach ($_FILES['imagens']['tmp_name'] as $key => $tmp_name) {
 
-   $destino = "../src/images/" . $nomeImagem;
+        $nomeArquivo = uniqid() . "_" . $_FILES['imagens']['name'][$key];
+        $destino = "../src/images/" . $nomeArquivo;
 
-   move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
+        if (move_uploaded_file($tmp_name, $destino)) {
+            $imagensSalvas[] = "../src/images/" . $nomeArquivo;
+        }
 
-   $imagemPath = "src/images/" . $nomeImagem;
+    }
+
 }
 
 $novoServico = [
-    "nome" => $nome,
-    "descricao" => $descricao,
-    "preco" => $preco,
-    "categoria" => $categoria,
-    "imagem" => $imagemPath
+    "nome" => $_POST['nome'],
+    "descricao" => $_POST['descricao'],
+    "preco" => $_POST['preco'],
+    "categoria" => $_POST['categoria'],
+    "imagens" => $imagensSalvas
 ];
 
 $servicos[] = $novoServico;
