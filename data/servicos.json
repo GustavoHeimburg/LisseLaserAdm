@@ -357,5 +357,16 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
+    },
+    {
+        "nome": "fdsf",
+        "descricao": "sdf",
+        "preco": "90.99",
+        "categoria": "combos",
+        "imagens": [
+            "..\/src\/images\/69b97a6a001ce_IMG_8014.HEIC",
+            "..\/src\/images\/69b97a6a00a02_IMG_8018.HEIC",
+            "..\/src\/images\/69b97a6a00dc4_IMG_8037.HEIC"
+        ]
     }
 ]
