@@ -11,16 +11,22 @@ $servicos[$id]['descricao'] = $_POST['descricao'];
 $servicos[$id]['preco'] = $_POST['preco'];
 $servicos[$id]['categoria'] = $_POST['categoria'];
 
-if(isset($_FILES['imagem']) && $_FILES['imagem']['error']==0){
+$imagensSalvas = [];
 
-$nomeImagem = time() . "_" . $_FILES['imagem']['name'];
+if (!empty($_FILES['imagens']['name'][0])) {
 
-$destino = "../src/images/" . $nomeImagem;
+    foreach ($_FILES['imagens']['tmp_name'] as $key => $tmp_name) {
 
-move_uploaded_file($_FILES['imagem']['tmp_name'], $destino);
+        $nomeArquivo = time() . "_" . $_FILES['imagens']['name'][$key];
+        $destino = "../src/images/" . $nomeArquivo;
 
-$servicos[$id]['imagem'] = "../src/images/" . $nomeImagem;
+        if (move_uploaded_file($tmp_name, $destino)) {
+            $imagensSalvas[] = "../src/images/" . $nomeArquivo;
+        }
 
+    }
+
+    $servicos[$id]['imagens'] = $imagensSalvas;
 }
 
 file_put_contents($arquivo, json_encode($servicos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));

@@ -164,6 +164,19 @@ $servicos = json_decode(file_get_contents($arquivo), true);
     border-radius:2px;
 }
 
+.combo-images{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.combo-images img{
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 </style>
 
 </head>
@@ -323,6 +336,16 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <h3 class="dish-title">
 <?= $servico['nome'] ?>
 </h3>
+
+<?php if(isset($servico['imagens']) && is_array($servico['imagens'])): ?>
+    <div class="combo-images">
+        <?php foreach($servico['imagens'] as $img): ?>
+            <img src="../<?= $img ?>" class="rosto-photo">
+        <?php endforeach; ?>
+    </div>
+<?php elseif(isset($servico['imagem'])): ?>
+    <img src="../<?= $servico['imagem'] ?>" class="rosto-photo">
+<?php endif; ?>
 
 <span class="dish-description">
 <?= $servico['descricao'] ?>
