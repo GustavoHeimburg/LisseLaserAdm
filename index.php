@@ -223,7 +223,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         <span class="linham"></span>
     </div>
 
-    <div class="dishes-grid" id="dishes-masculino">
+        <div class="dishes-grid" id="dishes-masculino">
 
         <?php foreach ($servicos as $servico): ?>
             <?php if ($servico['categoria'] === 'masculino'): ?>

@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
           card.style.display = "";
         });
 
-        grid.offsetHeight;
+        grid.style.height = "auto";
 
         btnMais.style.display = "none";
         if (btnMenos) btnMenos.style.display = "inline-flex";
