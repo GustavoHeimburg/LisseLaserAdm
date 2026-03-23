@@ -581,3 +581,16 @@ z-index:999;
 color:white;
 text-decoration:none;
 }
+
+#dishes-masculino{
+  min-height: 1px;
+}
+
+#dishes-masculino.expanded{
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.dish.hidden-card{
+  display: none !important;
