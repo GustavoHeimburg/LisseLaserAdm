@@ -21,7 +21,7 @@ if (!empty($_FILES['imagens']['name'][0])) {
         $destino = "../src/images/" . $nomeArquivo;
 
         if (move_uploaded_file($tmp_name, $destino)) {
-            $imagensSalvas[] = "../src/images/" . $nomeArquivo;
+            $imagensSalvas[] = "src/images/" . $nomeArquivo;
         }
 
     }

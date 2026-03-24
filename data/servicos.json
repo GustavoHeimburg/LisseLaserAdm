@@ -357,5 +357,14 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
+    },
+    {
+        "nome": "sd",
+        "descricao": "kk",
+        "preco": "90.99",
+        "categoria": "feminino",
+        "imagem": [
+            "src\/images\/69c1e9d49b344_676229f3e356bcd459b09dc74c88e3ef.jpg"
+        ]
     }
 ]
