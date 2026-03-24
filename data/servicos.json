@@ -4,210 +4,210 @@
         "nome": "AUREOLAS",
         "descricao": "Remoção precisa e segura dos pelos ao redor da aréola, proporcionando um aspecto mais limpo e delicado à região.",
         "preco": "45.90",
-        "imagem": "src\/images\/aureola.png"
+        "imagens": "src\/images\/aureola.png"
     },
     {
         "categoria": "feminino",
         "nome": "LINHA ALBA",
         "descricao": "Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.",
         "preco": "80.99",
-        "imagem": "src\/images\/linhaalba.png"
+        "imagens": "src\/images\/linhaalba.png"
     },
     {
         "categoria": "feminino",
         "nome": "AXILA",
         "descricao": "Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.",
         "preco": "59.99",
-        "imagem": "src\/images\/axila.png"
+        "imagens": "src\/images\/axila.png"
     },
     {
         "categoria": "feminino",
         "nome": "BUÇO",
         "descricao": "Remoção precisa dos pelos do buço, deixando a região mais lisa e com aparência uniforme.",
         "preco": "39.99",
-        "imagem": "src\/images\/buço.png"
+        "imagens": "src\/images\/buço.png"
     },
     {
         "categoria": "feminino",
         "nome": "VIRILHA CAVADA",
         "descricao": "Remoção uniforme que valoriza a estética da região, garantindo mais conforto e cuidado com a pele.",
         "preco": "69.99",
-        "imagem": "src\/images\/virilhacavadaa.png"
+        "imagens": "src\/images\/virilhacavadaa.png"
     },
     {
         "categoria": "feminino",
         "nome": "ROSTO",
         "descricao": "Tratamento completo para remoção dos pelos faciais, deixando a pele mais limpa, suave e uniforme.",
         "preco": "49.99",
-        "imagem": "src\/images\/facial.png"
+        "imagens": "src\/images\/facial.png"
     },
     {
         "categoria": "feminino",
         "nome": "INTIMA COMPLETA",
         "descricao": "Remoção eficaz dos pelos da região íntima, proporcionando conforto, higiene e cuidado com a pele.",
         "preco": "69.99",
-        "imagem": "src\/images\/intimacompleta.png"
+        "imagens": "src\/images\/intimacompleta.png"
     },
     {
         "categoria": "feminino",
         "nome": "LOMBAR",
         "descricao": "Remoção dos pelos da região lombar, garantindo um visual mais limpo e uniforme.",
         "preco": "39.99",
-        "imagem": "src\/images\/lombar.png"
+        "imagens": "src\/images\/lombar.png"
     },
     {
         "categoria": "feminino",
         "nome": "QUEIXO",
         "descricao": "Remoção precisa dos pelos do queixo, deixando a pele mais lisa e com aparência uniforme.",
         "preco": "39.99",
-        "imagem": "src\/images\/queixo.png"
+        "imagens": "src\/images\/queixo.png"
     },
     {
         "categoria": "feminino",
         "nome": "ANTEBRAÇO",
         "descricao": "Remoção eficaz dos pelos do antebraço, proporcionando um visual mais limpo e uniforme.",
         "preco": "59.99",
-        "imagem": "src\/images\/antebraçoo.png"
+        "imagens": "src\/images\/antebraçoo.png"
     },
     {
         "categoria": "feminino",
         "nome": "BRAÇO",
         "descricao": "Remoção eficaz dos pelos dos braços, deixando a pele mais lisa e com aparência uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/braçofem.png"
+        "imagens": "src\/images\/braçofem.png"
     },
     {
         "categoria": "feminino",
         "nome": "ABDÔMEN",
         "descricao": "Remoção dos pelos do abdômen, proporcionando um visual mais limpo e uniforme à região.",
         "preco": "69.99",
-        "imagem": "src\/images\/abdomen.png"
+        "imagens": "src\/images\/abdomen.png"
     },
     {
         "categoria": "feminino",
         "nome": "COSTAS",
         "descricao": "Remoção eficaz dos pelos das costas, garantindo uma aparência mais limpa e uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/costas33.png"
+        "imagens": "src\/images\/costas33.png"
     },
     {
         "categoria": "feminino",
         "nome": "MEIA PERNA",
         "descricao": "Remoção dos pelos da meia perna, deixando a pele mais lisa e com aspecto uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/pernas.png"
+        "imagens": "src\/images\/pernas.png"
     },
     {
         "categoria": "feminino",
         "nome": "PERNA INTEIRA",
         "descricao": "Remoção completa dos pelos das pernas, garantindo uma pele mais lisa e visual uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/pernascompletas.jpeg"
+        "imagens": "src\/images\/pernascompletas.jpeg"
     },
     {
         "categoria": "feminino",
         "nome": "GLUTEO",
         "descricao": "Remoção eficaz dos pelos da região do glúteo, proporcionando conforto e um visual mais uniforme.",
         "preco": "59.99",
-        "imagem": "src\/images\/gluteos.png"
+        "imagens": "src\/images\/gluteos.png"
     },
     {
         "categoria": "masculino",
         "nome": "CONTORNO DA BARBA",
         "descricao": "Remoção precisa dos pelos para definir o contorno da barba, garantindo um visual mais alinhado e uniforme.",
         "preco": "49.99",
-        "imagem": "src\/images\/contronobarba.jpeg"
+        "imagens": "src\/images\/contronobarba.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "BARBA COMPLETA",
         "descricao": "Remoção completa dos pelos da barba, proporcionando uma pele mais lisa e aparência uniforme.",
         "preco": "69.99",
-        "imagem": "src\/images\/barba.jpeg"
+        "imagens": "src\/images\/barba.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "AXILA",
         "descricao": "Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.",
         "preco": "69.99",
-        "imagem": "src\/images\/axila.jpeg"
+        "imagens": "src\/images\/axila.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "PEITO",
         "descricao": "Remoção eficaz dos pelos do peito, garantindo uma aparência mais limpa e uniforme.",
         "preco": "59.99",
-        "imagem": "src\/images\/peitoral.jpeg"
+        "imagens": "src\/images\/peitoral.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "ABDÔMEN",
         "descricao": "Remoção dos pelos do abdômen, proporcionando um visual mais limpo e uniforme à região.",
         "preco": "79.99",
-        "imagem": "src\/images\/abdomem.jpeg"
+        "imagens": "src\/images\/abdomem.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "COSTAS",
         "descricao": "Remoção eficaz dos pelos das costas, garantindo uma aparência mais limpa e uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/costasmasculinas.jpeg"
+        "imagens": "src\/images\/costasmasculinas.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "LOMBAR",
         "descricao": "Remoção dos pelos da região lombar, proporcionando um visual mais limpo e uniforme.",
         "preco": "49.99",
-        "imagem": "src\/images\/lombar.jpeg"
+        "imagens": "src\/images\/lombar.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "VIRILHA SOMENTE FRENTE",
         "descricao": "Remoção dos pelos da parte frontal da virilha, garantindo um visual mais limpo, uniforme e confortável.",
         "preco": "99.99",
-        "imagem": "src\/images\/virilhamasc.jpeg"
+        "imagens": "src\/images\/virilhamasc.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "ÍNTIMA COMPLETA",
         "descricao": "Remoção eficaz dos pelos da região íntima, proporcionando conforto, higiene e cuidado com a pele.",
         "preco": "129.99",
-        "imagem": "src\/images\/intima.jpeg"
+        "imagens": "src\/images\/intima.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "GLÚTEO",
         "descricao": "Remoção eficaz dos pelos da região do glúteo, proporcionando conforto e um visual mais uniforme.",
         "preco": "99.99",
-        "imagem": "src\/images\/Gluteo.jpeg"
+        "imagens": "src\/images\/Gluteo.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "ANTEBRAÇO",
         "descricao": "Remoção eficaz dos pelos do antebraço, proporcionando um visual mais limpo e uniforme.",
         "preco": "49.99",
-        "imagem": "src\/images\/antebraçomascs.jpeg"
+        "imagens": "src\/images\/antebraçomascs.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "MEIA PERNA",
         "descricao": "Remoção dos pelos da meia perna, proporcionando uma pele mais lisa e aparência uniforme.",
         "preco": "79.99",
-        "imagem": "src\/images\/meiaperna.jpeg"
+        "imagens": "src\/images\/meiaperna.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "PERNA INTEIRA",
         "descricao": "Remoção completa dos pelos das pernas, garantindo uma pele mais lisa e visual uniforme.",
         "preco": "79.99",
-        "imagem": "src\/images\/pernascompletas.jpeg"
+        "imagens": "src\/images\/pernascompletas.jpeg"
     },
     {
         "categoria": "masculino",
         "nome": "BRAÇO COMPLETO",
         "descricao": "Remoção completa dos pelos dos braços, proporcionando uma pele mais lisa e aparência uniforme.",
         "preco": "89.99",
-        "imagem": "src\/images\/braço.jpeg"
+        "imagens": "src\/images\/braço.jpeg"
     },
     {
         "categoria": "combos",
@@ -356,15 +356,6 @@
             "src\/images\/axila.png",
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
-        ]
-    },
-    {
-        "nome": "sd",
-        "descricao": "kk",
-        "preco": "90.99",
-        "categoria": "feminino",
-        "imagem": [
-            "src\/images\/69c1e9d49b344_676229f3e356bcd459b09dc74c88e3ef.jpg"
         ]
     }
 ]

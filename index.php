@@ -166,9 +166,25 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <?php if (isset($servico['imagem'])): ?>
-                        <img src="<?= $servico['imagem']; ?>" class="rosto-photo" alt="<?= $servico['nome']; ?>">
-                    <?php endif; ?>
+                 <?php
+                 $imagens = [];
+
+                 // formato novo (array)
+                 if (isset($servico['imagens']) && is_array($servico['imagens'])) {
+                     $imagens = $servico['imagens'];
+                 }
+
+                 // formato antigo (string única)
+                 elseif (isset($servico['imagens']) && !empty($servico['imagens'])) {
+                     $imagens = [$servico['imagens']];
+                 }
+                 ?>
+
+                 <?php if (!empty($imagens)): ?>
+                     <?php foreach ($imagens as $img): ?>
+                         <img src="<?= $img ?>" class="rosto-photo">
+                     <?php endforeach; ?>
+                 <?php endif; ?>
 
                     <h3 class="dish-title"><?= $servico['nome']; ?></h3>
 
@@ -233,9 +249,25 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <?php if (isset($servico['imagem'])): ?>
-                        <img src="<?= $servico['imagem']; ?>" class="rosto-photo" alt="<?= $servico['nome']; ?>">
-                    <?php endif; ?>
+                 <?php
+                                  $imagens = [];
+
+                                  // formato novo (array)
+                                  if (isset($servico['imagens']) && is_array($servico['imagens'])) {
+                                      $imagens = $servico['imagens'];
+                                  }
+
+                                  // formato antigo (string única)
+                                  elseif (isset($servico['imagens']) && !empty($servico['imagens'])) {
+                                      $imagens = [$servico['imagens']];
+                                  }
+                                  ?>
+
+                                  <?php if (!empty($imagens)): ?>
+                                      <?php foreach ($imagens as $img): ?>
+                                          <img src="<?= $img ?>" class="rosto-photo">
+                                      <?php endforeach; ?>
+                                  <?php endif; ?>
 
                     <h3 class="dish-title">
                         <?= $servico['nome']; ?>

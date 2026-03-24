@@ -209,8 +209,8 @@ $servicos = json_decode(file_get_contents($arquivo), true);
 <i class="fa-solid fa-heart"></i>
 </div>
 
-<?php if(isset($servico['imagem'])): ?>
-<img src="../<?= $servico['imagem'] ?>" class="rosto-photo">
+<?php if(isset($servico['imagens'])): ?>
+<img src="../<?= $servico['imagens'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">
@@ -273,8 +273,8 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <i class="fa-solid fa-heart"></i>
 </div>
 
-<?php if(isset($servico['imagem'])): ?>
-<img src="../<?= $servico['imagem'] ?>" class="rosto-photo">
+<?php if(isset($servico['imagens'])): ?>
+<img src="../<?= $servico['imagens'] ?>" class="rosto-photo">
 <?php endif; ?>
 
 <h3 class="dish-title">
