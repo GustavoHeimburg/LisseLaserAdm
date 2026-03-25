@@ -119,7 +119,21 @@ input[type=file]{
 </style>
 
 </head>
+<script>
+const categoriaSelect = document.querySelector('select[name="categoria"]');
+const publicoGroup = document.getElementById('publico-group');
 
+function verificarCategoria() {
+    if (categoriaSelect.value === 'combos') {
+        publicoGroup.style.display = 'block';
+    } else {
+        publicoGroup.style.display = 'none';
+    }
+}
+
+categoriaSelect.addEventListener('change', verificarCategoria);
+verificarCategoria();
+</script>
 <body>
 
 <div class="form-container">
@@ -155,6 +169,17 @@ input[type=file]{
 <option value="combos" <?= $servico['categoria']=="combos"?"selected":"" ?>>Combos</option>
 
 </select>
+
+<div class="form-group" id="publico-group">
+<label>Público do Combo</label>
+
+<select name="publico">
+<option value="">Selecione</option>
+<option value="feminino" <?= ($servico['publico'] ?? '')=="feminino"?"selected":"" ?>>Feminino</option>
+<option value="masculino" <?= ($servico['publico'] ?? '')=="masculino"?"selected":"" ?>>Masculino</option>
+</select>
+
+</div>
 
 </div>
 

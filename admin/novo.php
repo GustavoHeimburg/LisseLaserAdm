@@ -149,14 +149,23 @@ input[type=file]{
 </div>
 
 <div class="form-group">
-<label>Categoria</label>
+    <label>Categoria</label>
 
-<select name="categoria">
-<option value="feminino">Feminino</option>
-<option value="masculino">Masculino</option>
-<option value="combos">Combos</option>
-</select>
+    <select name="categoria">
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+        <option value="combos">Combos</option>
+    </select>
+</div>
 
+<div class="form-group" id="publico-group" style="display:none;">
+    <label>Público do Combo</label>
+
+    <select name="publico">
+        <option value="">Selecione</option>
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+    </select>
 </div>
 
 <div class="form-group">
@@ -177,4 +186,16 @@ Salvar Serviço
 </div>
 
 </body>
+<script>
+const categoriaSelect = document.querySelector('select[name="categoria"]');
+const publicoGroup = document.getElementById('publico-group');
+
+categoriaSelect.addEventListener('change', function() {
+    if (this.value === 'combos') {
+        publicoGroup.style.display = 'block';
+    } else {
+        publicoGroup.style.display = 'none';
+    }
+});
+</script>
 </html>

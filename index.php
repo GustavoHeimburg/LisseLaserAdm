@@ -252,7 +252,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                  <?php
                                   $imagens = [];
 
-                                  // formato novo (array)
                                   if (isset($servico['imagens']) && is_array($servico['imagens'])) {
                                       $imagens = $servico['imagens'];
                                   }
@@ -332,7 +331,15 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 <?php foreach ($servicos as $servico): ?>
 <?php if ($servico['categoria'] === 'combos'): ?>
 
-<?php $publico = $servico['publico'] ?? 'unissex'; ?>
+<?php
+$publico = $servico['publico'] ?? null;
+?>
+
+<?php if ($publico): ?>
+    <span class="dish-badge <?= htmlspecialchars($publico) ?>">
+        <?= ucfirst(htmlspecialchars($publico)) ?>
+    </span>
+<?php endif; ?>
 
 <div class="dish combo-extra" data-publico="<?= $publico ?>">
 
