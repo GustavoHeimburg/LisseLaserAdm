@@ -192,14 +192,16 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                         <?= $servico['descricao']; ?>
                     </span>
 
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(67+)</span>
-                    </div>
+                <?php $avs = $servico['avaliacoes'] ?? 67; ?>
+
+                <div class="dish-rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span>(<?= $avs ?>+)</span>
+                </div>
 
                     <div class="dish-price">
                         <h4>

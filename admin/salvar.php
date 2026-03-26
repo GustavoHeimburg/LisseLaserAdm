@@ -11,6 +11,7 @@ $servicos[$id]['descricao'] = $_POST['descricao'];
 $servicos[$id]['preco'] = $_POST['preco'];
 $servicos[$id]['categoria'] = $_POST['categoria'];
 $servicos[$id]['publico'] = $_POST['publico'] ?? null;
+$servicos[$id]['avaliacoes'] = $_POST['avaliacoes'] ?? 0;
 
 $imagensSalvas = [];
 

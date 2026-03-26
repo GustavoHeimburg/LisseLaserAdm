@@ -173,6 +173,11 @@ input[type=file]{
 <input type="file" name="imagens[]" multiple accept="image/*">
 </div>
 
+<div class="form-group">
+<label>Avaliações (+)</label>
+<input type="number" name="avaliacoes" placeholder="Ex: 67">
+</div>
+
 <button class="btn-save" type="submit">
 Salvar Serviço
 </button>

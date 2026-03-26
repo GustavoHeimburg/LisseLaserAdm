@@ -32,6 +32,7 @@ $novoServico = [
     "preco" => $_POST['preco'],
     "categoria" => $_POST['categoria'],
     "publico" => $_POST['publico'] ?? null,
+    "avaliacoes" => $_POST['avaliacoes'] ?? 0,
     "imagens" => $imagensSalvas
 ];
 
