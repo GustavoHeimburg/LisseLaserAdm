@@ -159,7 +159,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     <div class="dishes-grid" id="dishes-feminino">
 
         <?php foreach ($servicos as $servico): ?>
-            <?php if ($servico['categoria'] === 'feminino'): ?>
+        <?php if ($servico['categoria'] === 'feminino' && ($servico['ativo'] ?? true)): ?>
 
                 <div class="dish">
                     <div class="dish-heart">
@@ -169,12 +169,10 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                  <?php
                  $imagens = [];
 
-                 // formato novo (array)
                  if (isset($servico['imagens']) && is_array($servico['imagens'])) {
                      $imagens = $servico['imagens'];
                  }
 
-                 // formato antigo (string única)
                  elseif (isset($servico['imagens']) && !empty($servico['imagens'])) {
                      $imagens = [$servico['imagens']];
                  }
@@ -244,7 +242,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         <div class="dishes-grid" id="dishes-masculino">
 
         <?php foreach ($servicos as $servico): ?>
-            <?php if ($servico['categoria'] === 'masculino'): ?>
+            <?php if ($servico['categoria'] === 'masculino' && ($servico['ativo'] ?? true)): ?>
 
                 <div class="dish combo-extraa">
                     <div class="dish-heart">
@@ -331,7 +329,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     <div class="dishes-grid" id="dishes-combos">
 
 <?php foreach ($servicos as $servico): ?>
-<?php if ($servico['categoria'] === 'combos'): ?>
+<?php if ($servico['categoria'] === 'combos' && ($servico['ativo'] ?? true)): ?>
 
 <?php
 $publico = $servico['publico'] ?? null;

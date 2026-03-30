@@ -357,5 +357,25 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
+    },
+    {
+        "nome": "ff",
+        "descricao": "ff",
+        "preco": "39.99",
+        "categoria": "feminino",
+        "publico": "",
+        "avaliacoes": "250",
+        "imagens": [],
+        "ativo": false
+    },
+    {
+        "nome": "sda",
+        "descricao": "asd",
+        "preco": "39.99",
+        "categoria": "feminino",
+        "publico": "",
+        "avaliacoes": "",
+        "imagens": [],
+        "ativo": false
     }
 ]

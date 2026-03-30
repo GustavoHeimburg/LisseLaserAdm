@@ -194,8 +194,6 @@ $servicos = json_decode(file_get_contents($arquivo), true);
 </div>
 
 
-<!-- FEMININO -->
-
 <h2 class="categoria">Depilação Feminina</h2>
 
 <div class="dishes-grid">
@@ -249,16 +247,15 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 </a>
 
 </div>
-
+    <?php if (($servico['ativo'] ?? true) == false): ?>
+    <a href="restaurar.php?id=<?= $index ?>">♻️ Restaurar</a>
+    <?php endif; ?>
 </div>
 
 <?php endif; ?>
 <?php endforeach; ?>
 
 </div>
-
-
-<!-- MASCULINO -->
 
 <h2 class="categoria">Depilação Masculina</h2>
 
@@ -313,7 +310,11 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 </a>
 
 </div>
-
+<?php if (($servico['ativo'] ?? true) == false): ?>
+    <a href="restaurar.php?id=<?= $index ?>" class="btn-edit">
+        ♻️ Restaurar
+    </a>
+<?php endif; ?>
 </div>
 
 <?php endif; ?>
@@ -370,7 +371,11 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 </a>
 
 </div>
-
+<?php if (($servico['ativo'] ?? true) == false): ?>
+    <a href="restaurar.php?id=<?= $index ?>" class="btn-edit">
+        ♻️ Restaurar
+    </a>
+<?php endif; ?>
 </div>
 
 <?php endif; ?>
