@@ -381,8 +381,51 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <?php endif; ?>
 <?php endforeach; ?>
 
+<h2 class="categoria">🗑 Lixeira</h2>
+
+<div class="dishes-grid">
+
+<?php foreach ($servicos as $index => $servico): ?>
+<?php if (($servico['ativo'] ?? true) == false): ?>
+
+<div class="dish" style="opacity:0.6;">
+
+    <h3 class="dish-title">
+        <?= $servico['nome'] ?>
+    </h3>
+
+    <?php if(isset($servico['imagens']) && is_array($servico['imagens'])): ?>
+        <div class="combo-images">
+            <?php foreach($servico['imagens'] as $img): ?>
+                <img src="../<?= $img ?>">
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <span class="dish-description">
+        <?= $servico['descricao'] ?>
+    </span>
+
+    <div class="admin-actions">
+
+        <a href="restaurar.php?id=<?= $index ?>" class="btn-restore">
+            ♻️ Restaurar
+        </a>
+
+        <a href="excluir_permanente.php?id=<?= $index ?>" class="btn-delete-perm">
+            ❌ Excluir
+        </a>
+
+    </div>
+
 </div>
 
+<?php endif; ?>
+<?php endforeach; ?>
+
+</div>
+
+</div>
 
 </body>
 </html>
