@@ -177,6 +177,38 @@ $servicos = json_decode(file_get_contents($arquivo), true);
   border-radius: 12px;
 }
 
+/* BOTÃO RESTAURAR */
+.btn-restore{
+    background:#4CAF50;
+    color:white;
+    padding:8px 14px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.2s;
+}
+
+.btn-restore:hover{
+    background:#43a047;
+    transform:scale(1.05);
+}
+
+/* BOTÃO EXCLUIR PERMANENTE */
+.btn-delete-perm{
+    background:#111;
+    color:white;
+    padding:8px 14px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.2s;
+}
+
+.btn-delete-perm:hover{
+    background:#000;
+    transform:scale(1.05);
+}
+
 </style>
 
 </head>

@@ -366,7 +366,7 @@
         "publico": "",
         "avaliacoes": "250",
         "imagens": [],
-        "ativo": false
+        "ativo": true
     },
     {
         "nome": "sda",
@@ -376,6 +376,6 @@
         "publico": "",
         "avaliacoes": "",
         "imagens": [],
-        "ativo": false
+        "ativo": true
     }
 ]
