@@ -231,8 +231,7 @@ $servicos = json_decode(file_get_contents($arquivo), true);
 <div class="dishes-grid">
 
 <?php foreach ($servicos as $index => $servico): ?>
-<?php if ($servico['categoria'] === 'feminino'): ?>
-
+<?php if ($servico['categoria'] === 'feminino' && ($servico['ativo'] ?? true)): ?>
 <div class="dish">
 
 <div class="dish-heart">
@@ -294,8 +293,7 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <div class="dishes-grid">
 
 <?php foreach ($servicos as $index => $servico): ?>
-<?php if ($servico['categoria'] === 'masculino'): ?>
-
+<?php if ($servico['categoria'] === 'masculino' && ($servico['ativo'] ?? true)): ?>
 <div class="dish">
 
 <div class="dish-heart">
@@ -362,8 +360,7 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <div class="dishes-grid">
 
 <?php foreach ($servicos as $index => $servico): ?>
-<?php if ($servico['categoria'] === 'combos'): ?>
-
+<?php if ($servico['categoria'] === 'combos' && ($servico['ativo'] ?? true)): ?>
 <div class="dish">
 
 <h3 class="dish-title">
@@ -413,6 +410,9 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <?php endif; ?>
 <?php endforeach; ?>
 
+
+
+</div>
 <h2 class="categoria">🗑 Lixeira</h2>
 
 <div class="dishes-grid">
@@ -444,7 +444,9 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
             ♻️ Restaurar
         </a>
 
-        <a href="excluir_permanente.php?id=<?= $index ?>" class="btn-delete-perm">
+        <a href="excluir_permanente.php?id=<?= $index ?>"
+           class="btn-delete-perm"
+           onclick="return confirm('Tem certeza que deseja excluir permanentemente? Essa ação não pode ser desfeita!')">
             ❌ Excluir
         </a>
 
@@ -454,9 +456,6 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 
 <?php endif; ?>
 <?php endforeach; ?>
-
-</div>
-
 </div>
 
 </body>
