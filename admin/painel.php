@@ -410,8 +410,6 @@ R$<?= number_format((float)$servico['preco'],2,',','.') ?>
 <?php endif; ?>
 <?php endforeach; ?>
 
-
-
 </div>
 <h2 class="categoria">🗑 Lixeira</h2>
 
