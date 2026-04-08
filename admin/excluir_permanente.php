@@ -8,7 +8,6 @@ $id = $_GET['id'];
 
 unset($servicos[$id]);
 
-// reorganiza os índices
 $servicos = array_values($servicos);
 
 file_put_contents($arquivo, json_encode($servicos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
