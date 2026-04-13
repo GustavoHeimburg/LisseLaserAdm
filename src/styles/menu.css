@@ -217,11 +217,20 @@
 
       position: relative;
       overflow: hidden;
+
+      display: block;
+      opacity: 1;
+      transform: none;
+
     }
 
     .dish.combo-extraa:hover{
       transform: translateY(-6px);
       box-shadow: 0 14px 35px rgba(29, 78, 216, 0.22);
+    }
+
+    .dishes-grid .dish{
+      display: block;
     }
 
 #combos .dish.combo-extra{

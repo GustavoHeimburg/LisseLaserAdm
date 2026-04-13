@@ -118,27 +118,19 @@ $(document).ready(function () {
 
 })();
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  const grids = [
-    "dishes-feminino",
-    "dishes-masculino",
-    "dishes-combos"
-  ];
+  const sections = document.querySelectorAll(".menu-section");
 
-  grids.forEach(gridId => {
+  sections.forEach(section => {
 
-    const grid = document.getElementById(gridId);
-    if (!grid) return;
-
+    const grid = section.querySelector(".dishes-grid");
     const cards = grid.querySelectorAll(".dish");
-
-    const section = grid.closest("section");
 
     const btnMais = section.querySelector(".btn-ver-mais");
     const btnMenos = section.querySelector(".btn-ver-menos");
 
+    // esconder depois do 4
     cards.forEach((card, index) => {
       if (index >= 4) {
         card.style.display = "none";
@@ -148,45 +140,31 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnMenos) btnMenos.style.display = "none";
 
     if (btnMais) {
-
       btnMais.addEventListener("click", () => {
 
-        grid.classList.add("expanded");
-
         cards.forEach(card => {
-          card.style.display = "";
+          card.style.display = "block";
         });
-
-        grid.style.height = "auto";
 
         btnMais.style.display = "none";
         if (btnMenos) btnMenos.style.display = "inline-flex";
-
       });
-
     }
 
     if (btnMenos) {
-
-        btnMenos.addEventListener("click", () => {
-
-        grid.classList.remove("expanded");
+      btnMenos.addEventListener("click", () => {
 
         cards.forEach((card, index) => {
-
-        if (index >= 4) {
-        card.style.display = "none";
-        }
-
-
-
+          if (index >= 4) {
+            card.style.display = "none";
+          } else {
+            card.style.display = "block";
+          }
         });
 
         btnMenos.style.display = "none";
         if (btnMais) btnMais.style.display = "inline-flex";
-
-        });
-
+      });
     }
 
   });
