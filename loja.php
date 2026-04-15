@@ -3,7 +3,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 ?>
 
 <style>
-/* RESET BÁSICO */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -12,36 +12,39 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: linear-gradient(135deg, #020617, #0f172a);
     color: #fff;
 }
 
 /* SECTIONS */
 .menu-section {
-    padding: 60px 8%;
+    padding: 80px 8%;
 }
 
 /* TITULOS */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    color: #f8fafc;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .section-subtitle {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     color: #94a3b8;
+    font-size: 1rem;
 }
 
-/* LINHAS CATEGORIA */
+/* LINHAS */
 .linha-categoria,
 .linha-categoriam {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 40px 0;
+    margin: 50px 0;
 }
 
 .linha,
@@ -54,62 +57,86 @@ body {
 .categoria-texto,
 .categoria-textom {
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #38bdf8;
 }
 
 /* GRID */
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 /* CARD */
 .dish {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
     padding: 20px;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.35s ease;
+    border: 1px solid rgba(255,255,255,0.06);
     position: relative;
     overflow: hidden;
 }
 
+/* brilho no hover */
+.dish::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+    top: -50%;
+    left: -50%;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.dish:hover::before {
+    opacity: 1;
+}
+
 .dish:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     border-color: #38bdf8;
-    box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 /* IMAGEM */
 .rosto-photo,
 .combo-cover img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 10px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    transition: 0.4s;
+}
+
+.dish:hover img {
+    transform: scale(1.05);
 }
 
 /* TITULO */
 .dish-title {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.25rem;
+    margin: 12px 0;
+    font-weight: 600;
 }
 
 /* DESCRIÇÃO */
 .dish-description {
     font-size: 0.9rem;
     color: #cbd5f5;
+    line-height: 1.4;
 }
 
 /* AVALIAÇÃO */
 .dish-rate {
     margin: 10px 0;
     color: #facc15;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* PREÇO */
@@ -121,53 +148,61 @@ body {
 }
 
 .dish-price h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #38bdf8;
+    font-weight: bold;
 }
 
 /* BOTÃO */
 .btn-default {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
     border: none;
-    padding: 10px 14px;
-    border-radius: 10px;
+    padding: 10px 16px;
+    border-radius: 12px;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-default:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(56,189,248,0.4);
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(56,189,248,0.4);
 }
 
 /* CORAÇÃO */
 .dish-heart {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     color: #f43f5e;
     cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
 }
 
-/* BADGE (COMBOS) */
+.dish-heart:hover {
+    transform: scale(1.2);
+}
+
+/* BADGE */
 .dish-badge {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 5px 10px;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
+    backdrop-filter: blur(6px);
 }
 
-/* BADGES PERSONALIZADOS */
+/* CORES BADGE */
 .dish-badge.feminino {
-    background: #ec4899;
+    background: rgba(236,72,153,0.8);
 }
 
 .dish-badge.masculino {
-    background: #3b82f6;
+    background: rgba(59,130,246,0.8);
 }
 
 /* FILTROS */
@@ -179,10 +214,10 @@ body {
 }
 
 .filter-btn {
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
-    border: none;
-    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
     color: #fff;
     cursor: pointer;
     transition: 0.3s;
@@ -190,42 +225,45 @@ body {
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: #38bdf8;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
 }
 
-/* BOTÕES VER MAIS */
-.ver-mais-wrapper {
-    text-align: center;
-    margin-top: 30px;
-}
 
-.btn-ver-mais,
-.btn-ver-menos {
-    margin: 5px;
-}
-
-/* DIFERENCIAÇÃO MASCULINO */
-#masculino .dish {
-    border: 1px solid rgba(59,130,246,0.2);
-}
-
+/* DIFERENCIAÇÃO */
 #masculino .dish:hover {
     border-color: #3b82f6;
-    box-shadow: 0 10px 30px rgba(59,130,246,0.3);
 }
 
-/* DIFERENCIAÇÃO FEMININO */
 #feminino .dish:hover {
     border-color: #ec4899;
-    box-shadow: 0 10px 30px rgba(236,72,153,0.3);
 }
 
-/* COMBOS */
 #combos .dish:hover {
     border-color: #22c55e;
-    box-shadow: 0 10px 30px rgba(34,197,94,0.3);
 }
+.cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    transform: scale(1.05);
+}
+
 </style>
+
+<a href="carrinho.php" class="cart-button">
+    🛒 Ver carrinho
+</a>
 
 <section id="feminino" class="menu-section">
     <h2 class="section-title">LISSE</h2>
@@ -287,9 +325,14 @@ body {
                             R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                         </h4>
 
-                        <button class="btn-default add-to-cart">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+<form method="POST" action="add-to-cart.php">
+    <input type="hidden" name="name" value="<?= $servico['nome'] ?>">
+    <input type="hidden" name="price" value="<?= $servico['preco'] ?>">
+
+    <button type="submit" class="btn-default">
+        🛒
+    </button>
+</form>
                     </div>
                 </div>
 
@@ -359,9 +402,14 @@ body {
                             R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                         </h4>
 
-                        <button class="btn-default add-to-cart">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+<form method="POST" action="add-to-cart.php">
+    <input type="hidden" name="name" value="<?= $servico['nome'] ?>">
+    <input type="hidden" name="price" value="<?= $servico['preco'] ?>">
+
+    <button type="submit" class="btn-default">
+        🛒
+    </button>
+</form>
                     </div>
                 </div>
 
@@ -443,9 +491,14 @@ $publico = $servico['publico'] ?? null;
             R$<?= number_format((float)$servico['preco'], 2, ',', '.') ?>
         </h4>
 
-        <button class="btn-default add-to-cart">
-            <i class="fa-solid fa-basket-shopping"></i>
-        </button>
+<form method="POST" action="add-to-cart.php">
+    <input type="hidden" name="name" value="<?= $servico['nome'] ?>">
+    <input type="hidden" name="price" value="<?= $servico['preco'] ?>">
+
+    <button type="submit" class="btn-default">
+        🛒
+    </button>
+</form>
     </div>
 
 </div>
@@ -454,6 +507,8 @@ $publico = $servico['publico'] ?? null;
 <?php endforeach; ?>
 
     </div>
-
+<form method="POST" action="add-to-cart.php">
+    <button type="submit">TESTAR</button>
+</form>
 </div>
 </section>

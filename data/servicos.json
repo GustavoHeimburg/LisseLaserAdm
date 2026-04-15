@@ -11,7 +11,9 @@
         "nome": "LINHA ALBA",
         "descricao": "Remoção dos pelos da linha alba para um visual mais limpo e uniforme na região abdominal.",
         "preco": "80.99",
-        "imagens": "src\/images\/linhaalba.png"
+        "imagens": "src\/images\/linhaalba.png",
+        "publico": "",
+        "avaliacoes": "520"
     },
     {
         "categoria": "feminino",
