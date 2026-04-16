@@ -61,20 +61,15 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 <a href="#home">Início</a>
             </li>
             <li class="nav-item">
-                <a href="#feminino">Serviços</a>
-            </li>
-            <li class="nav-item">
                 <a href="#testimonials">Sobre</a>
             </li>
             <li class="nav-item">
                 <a href="#localizacao">Localização</a>
             </li>
         </ul>
-
-        <button class="btn-default"
-                onclick="window.open('https://wa.me/5549920014288?text=Olá,%20tenho%20interesse%20em%20agendar%20um%20procedimento%20😊', '_blank')">
-            AGENDE AQUI
-        </button>
+<a href="loja.php" class="btn-default">
+    AGENDE AQUI
+</a>
 
         <button id="mobile_btn">
             <i class="fa-solid fa-bars"></i>
@@ -85,9 +80,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         <ul id="mobile_nav_list">
             <li class="nav-item">
                 <a href="#home">Início</a>
-            </li>
-            <li class="nav-item">
-                <a href="#feminino">Serviços</a>
             </li>
             <li class="nav-item">
                 <a href="#testimonials">Sobre</a>
@@ -102,12 +94,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             Agende aqui
         </button>
     </div>
-
-<div class="cart-icon">
-<a href="carrinho.html">
-🛒 <span id="cart-count">0</span>
-</a>
-</div>
 
 </header>
 

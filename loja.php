@@ -253,10 +253,52 @@ body {
     font-weight: 600;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     transition: 0.3s;
+    z-index: 9999; /* MUITO IMPORTANTE */
+
 }
 
 .cart-button:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+    .menu-section {
+        padding: 40px 5%;
+    }
+
+    .dishes-grid {
+        grid-template-columns: 1fr; /* 1 por linha */
+    }
+
+    .dish {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .cart-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+}
+
+
+.cart-button {
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
 </style>
@@ -507,8 +549,5 @@ $publico = $servico['publico'] ?? null;
 <?php endforeach; ?>
 
     </div>
-<form method="POST" action="add-to-cart.php">
-    <button type="submit">TESTAR</button>
-</form>
 </div>
 </section>

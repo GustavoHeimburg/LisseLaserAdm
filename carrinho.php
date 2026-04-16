@@ -98,6 +98,23 @@ a {
     border-radius: 10px;
     color: #fff;
 }
+
+@media (max-width: 480px) {
+
+    .dish-title {
+        font-size: 1rem;
+    }
+
+    .dish-description {
+        font-size: 0.85rem;
+    }
+
+    .dish-price h4 {
+        font-size: 1rem;
+    }
+
+}
+
 </style>
 </head>
 
