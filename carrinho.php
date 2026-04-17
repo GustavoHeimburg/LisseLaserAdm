@@ -3,7 +3,6 @@ session_start();
 
 $cart = $_SESSION['cart'] ?? [];
 
-/* ATUALIZAR QUANTIDADE */
 if (isset($_GET['action'])) {
     $index = $_GET['index'];
 
