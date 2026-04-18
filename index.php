@@ -208,7 +208,77 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
 
     </section>
+<section id="faq">
 
+    <h2 class="section-title">Dúvidas Frequentes</h2>
+    <h3 class="section-subtitle">Tudo que você precisa saber antes de agendar</h3>
+
+    <div class="faq-container">
+
+        <!-- ITEM -->
+        <div class="faq-item">
+            <div class="faq-question">
+                A depilação a laser dói?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                A sensação varia de pessoa para pessoa, mas geralmente é leve e tolerável.
+                Muitos clientes comparam a pequenos "beliscões" rápidos. Utilizamos técnicas
+                para tornar o procedimento o mais confortável possível.
+            </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Quantas sessões são necessárias?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Em média, são necessárias de 6 a 10 sessões para resultados duradouros,
+                pois o laser atua melhor em fases específicas do crescimento do pelo.
+            </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Quais cuidados antes da sessão?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Evite exposição ao sol, não utilize cera ou pinça e mantenha a pele limpa.
+                O ideal é raspar os pelos com lâmina 1 dia antes do procedimento.
+            </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="faq-item">
+            <div class="faq-question">
+                E depois da depilação, o que devo fazer?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Evite sol direto, use protetor solar e mantenha a pele hidratada.
+                Isso ajuda a garantir melhores resultados e evitar irritações.
+            </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="faq-item">
+            <div class="faq-question">
+                Funciona para todos os tipos de pele?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Sim! A tecnologia atual permite atender diferentes tons de pele com segurança,
+                sempre com avaliação personalizada antes de iniciar o tratamento.
+            </div>
+        </div>
+
+    </div>
+
+</section>
 <section id="localizacao">
     <h2>Localização – Lisse Laser e Estética em Xanxerê</h2>
 

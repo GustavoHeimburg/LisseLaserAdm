@@ -594,4 +594,61 @@ text-decoration:none;
 
 .dish.hidden-card{
   display: none !important;
+  }
 
+#faq {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.faq-question i {
+    transition: 0.3s;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    transition: 0.4s ease;
+}
+
+/* ATIVO */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active i {
+    transform: rotate(180deg);
+}
