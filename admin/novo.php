@@ -4,76 +4,80 @@
 <html lang="pt-br">
 
 <head>
-
 <meta charset="UTF-8">
 <title>Novo Serviço</title>
 
-<link rel="stylesheet" href="../src/styles/style.css">
+<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
 body{
-    background:#f4f6f9;
-    font-family:Arial;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#020617,#0f172a);
+    color:white;
     padding:40px;
 }
 
 /* CARD */
-
 .form-container{
-    max-width:600px;
+    max-width:650px;
     margin:auto;
-    background:white;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
     padding:40px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 /* TITULO */
-
 .form-container h2{
     margin-bottom:25px;
-    font-size:28px;
-    border-left:6px solid #E9A209;
-    padding-left:12px;
+    font-size:26px;
+    background: linear-gradient(90deg,#38bdf8,#6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* GRUPOS */
-
 .form-group{
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
+/* LABEL */
 .form-group label{
     display:block;
     margin-bottom:6px;
-    font-weight:600;
+    font-weight:500;
+    color:#cbd5f5;
 }
 
 /* INPUTS */
-
-input[type=text],
-input[type=number],
-textarea,
-select{
-
+input, textarea, select{
     width:100%;
     padding:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:15px;
-    transition:0.2s;
-
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.05);
+    color:white;
+    font-size:14px;
+    transition:.3s;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-
-    border-color:#E9A209;
+input:focus, textarea:focus, select:focus{
     outline:none;
-    box-shadow:0 0 0 2px rgba(233,162,9,0.15);
-
+    border-color:#38bdf8;
+    box-shadow:0 0 0 2px rgba(56,189,248,0.2);
 }
 
 textarea{
@@ -81,44 +85,75 @@ textarea{
 }
 
 /* FILE */
-
 input[type=file]{
-    margin-top:5px;
+    background:none;
+    border:none;
+}
+
+/* PREVIEW */
+.preview{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.preview img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
 }
 
 /* BOTÃO */
-
 .btn-save{
-
     width:100%;
-    background:#E9A209;
-    color:white;
+    background: linear-gradient(135deg,#22c55e,#16a34a);
     border:none;
     padding:14px;
-    font-size:16px;
-    border-radius:8px;
-    font-weight:bold;
+    font-size:15px;
+    border-radius:12px;
+    color:white;
     cursor:pointer;
-    transition:0.2s;
-
+    font-weight:600;
+    transition:.3s;
 }
 
 .btn-save:hover{
-    background:#d89208;
+    transform:scale(1.03);
+    box-shadow:0 10px 25px rgba(34,197,94,0.4);
 }
 
-/* BOTÃO VOLTAR */
-
+/* VOLTAR */
 .voltar{
     display:inline-block;
     margin-top:20px;
+    color:#94a3b8;
     text-decoration:none;
-    color:#555;
-    font-weight:600;
+    font-size:14px;
 }
 
 .voltar:hover{
-    color:#E9A209;
+    color:#38bdf8;
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#22c55e;
+    padding:12px 20px;
+    border-radius:10px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 </style>
@@ -129,9 +164,9 @@ input[type=file]{
 
 <div class="form-container">
 
-<h2>Novo Serviço</h2>
+<h2>✨ Novo Serviço</h2>
 
-<form action="salvar_novo.php" method="POST" enctype="multipart/form-data">
+<form action="salvar_novo.php" method="POST" enctype="multipart/form-data" id="form">
 
 <div class="form-group">
 <label>Nome</label>
@@ -145,62 +180,101 @@ input[type=file]{
 
 <div class="form-group">
 <label>Preço</label>
-<input type="number" step="0.01" name="preco" required>
+<input type="text" name="preco" id="preco" placeholder="Ex: 49,90" required>
 </div>
 
 <div class="form-group">
-    <label>Categoria</label>
-
-    <select name="categoria">
-        <option value="feminino">Feminino</option>
-        <option value="masculino">Masculino</option>
-        <option value="combos">Combos</option>
-    </select>
+<label>Categoria</label>
+<select name="categoria" id="categoria">
+    <option value="feminino">Feminino</option>
+    <option value="masculino">Masculino</option>
+    <option value="combos">Combos</option>
+</select>
 </div>
 
 <div class="form-group" id="publico-group" style="display:none;">
-    <label>Público do Combo</label>
-
-    <select name="publico">
-        <option value="">Selecione</option>
-        <option value="feminino">Feminino</option>
-        <option value="masculino">Masculino</option>
-    </select>
+<label>Público do Combo</label>
+<select name="publico">
+    <option value="">Selecione</option>
+    <option value="feminino">Feminino</option>
+    <option value="masculino">Masculino</option>
+</select>
 </div>
 
 <div class="form-group">
-<label>Imagem</label>
-<input type="file" name="imagens[]" multiple accept="image/*">
+<label>Imagens</label>
+<input type="file" name="imagens[]" multiple accept="image/*" id="upload">
+<div class="preview" id="preview"></div>
 </div>
 
 <div class="form-group">
 <label>Avaliações (+)</label>
-<input type="number" name="avaliacoes" placeholder="Ex: 67">
+<input type="number" name="avaliacoes" placeholder="Ex: 120">
 </div>
 
 <button class="btn-save" type="submit">
-Salvar Serviço
+💾 Salvar Serviço
 </button>
 
 </form>
 
-<a class="voltar" href="painel.php">
-⬅ Voltar para o painel
-</a>
+<a class="voltar" href="painel.php">⬅ Voltar para o painel</a>
 
 </div>
 
-</body>
+<div id="toast" class="toast">Salvo com sucesso</div>
+
 <script>
-const categoriaSelect = document.querySelector('select[name="categoria"]');
+
+/* ===== MOSTRAR PUBLICO ===== */
+const categoria = document.getElementById('categoria');
 const publicoGroup = document.getElementById('publico-group');
 
-categoriaSelect.addEventListener('change', function() {
-    if (this.value === 'combos') {
-        publicoGroup.style.display = 'block';
-    } else {
-        publicoGroup.style.display = 'none';
-    }
+categoria.addEventListener('change', () => {
+    publicoGroup.style.display = categoria.value === 'combos' ? 'block' : 'none';
 });
+
+/* ===== PREVIEW IMAGEM ===== */
+const upload = document.getElementById('upload');
+const preview = document.getElementById('preview');
+
+upload.addEventListener('change', () => {
+    preview.innerHTML = '';
+
+    [...upload.files].forEach(file => {
+        const reader = new FileReader();
+
+        reader.onload = e => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            preview.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+    });
+});
+
+/* ===== FORMATA PREÇO ===== */
+const preco = document.getElementById('preco');
+
+preco.addEventListener('input', () => {
+    let v = preco.value.replace(/\D/g, '');
+    v = (v / 100).toFixed(2) + '';
+    v = v.replace('.', ',');
+    preco.value = v;
+});
+
+/* ===== TOAST FAKE UX ===== */
+document.getElementById('form').addEventListener('submit', () => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+});
+
 </script>
+
+</body>
 </html>

@@ -1,88 +1,82 @@
 <?php
 
 $arquivo = "../data/servicos.json";
-
 $servicos = json_decode(file_get_contents($arquivo), true);
 
 $id = $_GET['id'];
-
 $servico = $servicos[$id];
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
 <meta charset="UTF-8">
 <title>Editar Serviço</title>
 
-<link rel="stylesheet" href="../src/styles/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{box-sizing:border-box;}
+
 body{
-    background:#f4f6f9;
-    font-family:Arial;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    color:#fff;
+    margin:0;
     padding:40px;
 }
 
-/* CARD DO FORM */
-
+/* CONTAINER */
 .form-container{
-    max-width:600px;
+    max-width:650px;
     margin:auto;
-    background:white;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
     padding:40px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
 /* TITULO */
-
 .form-container h2{
     margin-bottom:25px;
     font-size:28px;
-    border-left:6px solid #E9A209;
-    padding-left:12px;
+    background:linear-gradient(90deg,#38bdf8,#6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-/* LABEL */
-
+/* GROUP */
 .form-group{
     margin-bottom:20px;
 }
 
+/* LABEL */
 .form-group label{
     display:block;
     margin-bottom:6px;
-    font-weight:600;
+    font-weight:500;
+    color:#cbd5f5;
 }
 
 /* INPUTS */
-
-input[type=text],
-textarea,
-select{
-
+input, textarea, select{
     width:100%;
     padding:12px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:15px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    background:rgba(255,255,255,0.06);
+    color:#fff;
+    font-size:14px;
     transition:0.2s;
-
 }
 
-input[type=text]:focus,
-textarea:focus,
-select:focus{
-
-    border-color:#E9A209;
-    outline:none;
-    box-shadow:0 0 0 2px rgba(233,162,9,0.15);
-
+input:focus, textarea:focus, select:focus{
+    box-shadow:0 0 0 2px #38bdf8;
 }
 
 textarea{
@@ -90,50 +84,48 @@ textarea{
 }
 
 /* FILE */
-
 input[type=file]{
-    margin-top:5px;
+    background:none;
+}
+
+/* PREVIEW */
+.preview{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.preview img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
 /* BOTÃO */
-
 .btn-save{
-
     width:100%;
-    background:#E9A209;
-    color:white;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
     border:none;
     padding:14px;
     font-size:16px;
-    border-radius:8px;
+    border-radius:12px;
     font-weight:bold;
+    color:#fff;
     cursor:pointer;
-    transition:0.2s;
-
+    transition:.3s;
 }
 
 .btn-save:hover{
-    background:#d89208;
+    transform:scale(1.03);
+    box-shadow:0 10px 30px rgba(34,197,94,0.4);
 }
 
 </style>
 
 </head>
-<script>
-const categoriaSelect = document.querySelector('select[name="categoria"]');
-const publicoGroup = document.getElementById('publico-group');
 
-function verificarCategoria() {
-    if (categoriaSelect.value === 'combos') {
-        publicoGroup.style.display = 'block';
-    } else {
-        publicoGroup.style.display = 'none';
-    }
-}
-
-categoriaSelect.addEventListener('change', verificarCategoria);
-verificarCategoria();
-</script>
 <body>
 
 <div class="form-container">
@@ -146,46 +138,42 @@ verificarCategoria();
 
 <div class="form-group">
 <label>Nome</label>
-<input type="text" name="nome" value="<?= $servico['nome'] ?>">
+<input type="text" name="nome" value="<?= $servico['nome'] ?>" required>
 </div>
 
 <div class="form-group">
 <label>Descrição</label>
-<textarea name="descricao"><?= $servico['descricao'] ?></textarea>
+<textarea name="descricao" required><?= $servico['descricao'] ?></textarea>
 </div>
 
 <div class="form-group">
 <label>Preço</label>
-<input type="text" name="preco" value="<?= $servico['preco'] ?>">
+<input type="number" step="0.01" name="preco" value="<?= $servico['preco'] ?>" required>
 </div>
 
 <div class="form-group">
 <label>Categoria</label>
-
-<select name="categoria">
-
+<select name="categoria" id="categoria">
 <option value="feminino" <?= $servico['categoria']=="feminino"?"selected":"" ?>>Feminino</option>
 <option value="masculino" <?= $servico['categoria']=="masculino"?"selected":"" ?>>Masculino</option>
 <option value="combos" <?= $servico['categoria']=="combos"?"selected":"" ?>>Combos</option>
-
 </select>
+</div>
 
 <div class="form-group" id="publico-group">
 <label>Público do Combo</label>
-
 <select name="publico">
 <option value="">Selecione</option>
 <option value="feminino" <?= ($servico['publico'] ?? '')=="feminino"?"selected":"" ?>>Feminino</option>
 <option value="masculino" <?= ($servico['publico'] ?? '')=="masculino"?"selected":"" ?>>Masculino</option>
 </select>
-
-</div>
-
 </div>
 
 <div class="form-group">
 <label>Nova imagem</label>
-<input type="file" name="imagens[]" multiple accept="image/*">
+<input type="file" id="fileInput" name="imagens[]" multiple accept="image/*">
+
+<div class="preview" id="preview"></div>
 </div>
 
 <div class="form-group">
@@ -200,6 +188,40 @@ Salvar Serviço
 </form>
 
 </div>
+
+<script>
+
+/* MOSTRAR/ESCONDER PUBLICO */
+const categoria = document.getElementById('categoria');
+const publicoGroup = document.getElementById('publico-group');
+
+function verificarCategoria(){
+    publicoGroup.style.display = categoria.value === 'combos' ? 'block' : 'none';
+}
+categoria.addEventListener('change', verificarCategoria);
+verificarCategoria();
+
+/* PREVIEW IMAGENS */
+const fileInput = document.getElementById('fileInput');
+const preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', () => {
+    preview.innerHTML = '';
+
+    Array.from(fileInput.files).forEach(file => {
+        const reader = new FileReader();
+
+        reader.onload = e => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            preview.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+    });
+});
+
+</script>
 
 </body>
 </html>
