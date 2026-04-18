@@ -263,21 +263,18 @@ window.addEventListener('storage', () => {
 renderCart();
 renderHistory();
 
-/* PWA */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 
-/* ===== GERAR PIX SIMPLES ===== */
 function gerarPixPayload(total) {
-    const chave = "SEU-PIX-AQUI"; // email, cpf ou chave aleatória
+    const chave = "";
     const nome = "LISSE";
     const cidade = "XANXERE";
 
     return `00020126580014BR.GOV.BCB.PIX0136${chave}52040000530398654${total.toFixed(2)}5802BR5913${nome}6008${cidade}62070503***6304`;
 }
 
-/* ABRIR PIX */
 document.getElementById('pixBtn').onclick = () => {
 
     if (cartItems.length === 0) {
@@ -295,7 +292,6 @@ document.getElementById('pixBtn').onclick = () => {
     document.getElementById('pixModal').classList.add('flex');
 };
 
-/* COPIAR */
 document.getElementById('copyPix').onclick = () => {
     const textarea = document.getElementById('pixCode');
     textarea.select();
@@ -303,7 +299,6 @@ document.getElementById('copyPix').onclick = () => {
     alert("PIX copiado!");
 };
 
-/* FECHAR */
 function closePix() {
     document.getElementById('pixModal').classList.add('hidden');
 }
