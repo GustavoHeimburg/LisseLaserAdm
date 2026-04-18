@@ -14,6 +14,7 @@
 
 </head>
 
+
 <body class="bg-[#020617] text-white font-[Poppins] overflow-x-hidden">
 
 <!-- BACKGROUND -->
@@ -46,6 +47,11 @@
             <strong id="cart-total" class="text-4xl font-bold text-green-400">R$ 0,00</strong>
         </div>
 
+        <button id="pixBtn"
+        class="px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold hover:scale-105 transition shadow-xl">
+        💳 Pagar com PIX
+        </button>
+
         <div class="flex gap-3">
             <button id="saveOrderBtn"
             class="px-6 py-3 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 transition">
@@ -57,7 +63,6 @@
                 Finalizar no WhatsApp
             </button>
         </div>
-
     </div>
 
     <!-- HISTÓRICO -->
@@ -66,6 +71,26 @@
         <div id="order-history" class="space-y-4"></div>
     </div>
 
+</div>
+
+<div id="pixModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <div class="bg-[#0f172a] p-6 rounded-2xl max-w-md w-full text-center border border-white/10">
+
+        <h2 class="text-2xl font-bold mb-4 text-yellow-400">Pagamento via PIX</h2>
+
+        <textarea id="pixCode" class="w-full h-32 p-3 rounded bg-black/40 text-white text-sm"></textarea>
+
+        <button id="copyPix"
+        class="mt-4 px-4 py-2 bg-green-500 rounded-lg hover:bg-green-600 transition">
+        Copiar código PIX
+        </button>
+
+        <button onclick="closePix()"
+        class="mt-3 text-gray-400 hover:text-white block w-full">
+        Fechar
+        </button>
+
+    </div>
 </div>
 
 <script>
@@ -241,6 +266,46 @@ renderHistory();
 /* PWA */
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
+}
+
+/* ===== GERAR PIX SIMPLES ===== */
+function gerarPixPayload(total) {
+    const chave = "SEU-PIX-AQUI"; // email, cpf ou chave aleatória
+    const nome = "LISSE";
+    const cidade = "XANXERE";
+
+    return `00020126580014BR.GOV.BCB.PIX0136${chave}52040000530398654${total.toFixed(2)}5802BR5913${nome}6008${cidade}62070503***6304`;
+}
+
+/* ABRIR PIX */
+document.getElementById('pixBtn').onclick = () => {
+
+    if (cartItems.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+    }
+
+    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    const payload = gerarPixPayload(total);
+
+    document.getElementById('pixCode').value = payload;
+
+    document.getElementById('pixModal').classList.remove('hidden');
+    document.getElementById('pixModal').classList.add('flex');
+};
+
+/* COPIAR */
+document.getElementById('copyPix').onclick = () => {
+    const textarea = document.getElementById('pixCode');
+    textarea.select();
+    document.execCommand('copy');
+    alert("PIX copiado!");
+};
+
+/* FECHAR */
+function closePix() {
+    document.getElementById('pixModal').classList.add('hidden');
 }
 </script>
 
