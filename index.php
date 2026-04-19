@@ -349,6 +349,39 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </button>
     </footer>
 </aside>
+
+<!-- BOTÃO -->
+<div id="chat-btn">💬</div>
+
+<!-- CHAT -->
+<div id="chatbox">
+
+    <div class="chat-header">
+        <span>LISSE Atendimento</span>
+        <button id="close-chat">✕</button>
+    </div>
+
+    <div id="chat-content">
+
+        <div class="bot-msg">
+            Olá 😊 Escolha uma opção ou digite sua dúvida:
+        </div>
+
+        <div class="quick-buttons">
+            <button onclick="quick('dói')">Dói?</button>
+            <button onclick="quick('sessões')">Sessões</button>
+            <button onclick="quick('preço')">Preço</button>
+            <button onclick="quick('cuidados')">Cuidados</button>
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Digite aqui...">
+        <button onclick="send()">➤</button>
+    </div>
+
+</div>
 <script src="src/javascript/script.js"></script>
 <script src="src/javascript/carrinho.js"></script>
 </body>

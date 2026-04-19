@@ -185,3 +185,68 @@ document.querySelectorAll('.faq-item').forEach(item => {
         }
     });
 });
+
+const chatBtn = document.getElementById('chat-btn');
+const chatbox = document.getElementById('chatbox');
+const closeChat = document.getElementById('close-chat');
+const content = document.getElementById('chat-content');
+const input = document.getElementById('chat-input');
+
+chatBtn.onclick = () => chatbox.style.display = 'flex';
+closeChat.onclick = () => chatbox.style.display = 'none';
+
+function addMsg(text, type) {
+    const div = document.createElement('div');
+    div.className = type === 'user' ? 'user-msg' : 'bot-msg';
+    div.innerText = text;
+    content.appendChild(div);
+    content.scrollTop = content.scrollHeight;
+}
+
+function responder(msg) {
+    msg = msg.toLowerCase();
+
+    if (msg.includes('dói') || msg.includes('dor')) {
+        return "A depilação é bem tranquila 😊 Sensação leve de beliscão.";
+    }
+
+    if (msg.includes('sess') || msg.includes('quantas')) {
+        return "Normalmente de 6 a 10 sessões para melhor resultado.";
+    }
+
+    if (msg.includes('preço') || msg.includes('valor')) {
+        return "Os valores variam por área 😉 Clique em 'Agendar' para ver tudo.";
+    }
+
+    if (msg.includes('antes')) {
+        return "Evite sol e não use cera. Raspe com lâmina antes.";
+    }
+
+    if (msg.includes('depois') || msg.includes('cuidados')) {
+        return "Use protetor solar e evite exposição ao sol.";
+    }
+
+    return "Não entendi 🤔 Quer falar direto comigo? https://wa.me/5549920014288";
+}
+
+function send() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMsg(text, 'user');
+
+    setTimeout(() => {
+        addMsg(responder(text), 'bot');
+    }, 400);
+
+    input.value = '';
+}
+
+input.addEventListener('keypress', e => {
+    if (e.key === 'Enter') send();
+});
+
+function quick(text) {
+    input.value = text;
+    send();
+}
