@@ -361,12 +361,12 @@
         ]
     },
     {
-        "nome": "sada",
-        "descricao": "s",
-        "preco": "40,99",
-        "categoria": "feminino",
-        "publico": "",
-        "avaliacoes": "3",
+        "nome": null,
+        "descricao": null,
+        "preco": "",
+        "categoria": null,
+        "publico": null,
+        "avaliacoes": 0,
         "ativo": true,
         "imagens": []
     }
