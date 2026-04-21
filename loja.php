@@ -175,7 +175,7 @@ COMBOS
 <?php if ($publico): ?>
 <span class="absolute top-3 left-3 bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs">
 <?= ucfirst($publico) ?>
-</span>
+</span>z
 <?php endif; ?>
 
 <div class="overflow-hidden rounded-2xl mb-4">

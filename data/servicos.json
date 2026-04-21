@@ -359,5 +359,15 @@
             "src\/images\/intimacompleta.png",
             "src\/images\/meiaperna.jpeg"
         ]
+    },
+    {
+        "nome": "sada",
+        "descricao": "s",
+        "preco": "40,99",
+        "categoria": "feminino",
+        "publico": "",
+        "avaliacoes": "3",
+        "ativo": true,
+        "imagens": []
     }
 ]
