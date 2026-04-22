@@ -19,7 +19,6 @@
 
 <body class="bg-[#020617] text-white font-[Poppins] overflow-x-hidden">
 
-<!-- BACKGROUND -->
 <div class="fixed w-[600px] h-[600px] bg-pink-500/30 blur-[180px] top-[-150px] left-[-150px]"></div>
 <div class="fixed w-[600px] h-[600px] bg-blue-500/30 blur-[180px] bottom-[-150px] right-[-150px]"></div>
 
