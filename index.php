@@ -64,6 +64,9 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 <a href="#testimonials">Sobre</a>
             </li>
             <li class="nav-item">
+                <a href="#faq">Duvidas</a>
+            </li>
+            <li class="nav-item">
                 <a href="#localizacao">Localização</a>
             </li>
         </ul>
@@ -84,6 +87,9 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             <li class="nav-item">
                 <a href="#testimonials">Sobre</a>
             </li>
+             <li class="nav-item">
+                <a href="#faq">Duvidas</a>
+             </li>
             <li class="nav-item">
                 <a href="#localizacao">Localização</a>
             </li>

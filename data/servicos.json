@@ -111,7 +111,9 @@
         "nome": "GLUTEO",
         "descricao": "Remoção eficaz dos pelos da região do glúteo, proporcionando conforto e um visual mais uniforme.",
         "preco": "59.99",
-        "imagens": "src\/images\/gluteos.png"
+        "imagens": "src\/images\/gluteos.png",
+        "publico": "",
+        "avaliacoes": "87"
     },
     {
         "categoria": "masculino",

@@ -10,6 +10,8 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 <title>LISSE</title>
 
+<link rel="icon" type="image/png" href="src/images/arma-espacial.png">
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,6 +28,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">
         LISSE
     </h1>
+
 
     <a href="carrinho.php" class="relative text-2xl hover:scale-110 transition">
         🛒
