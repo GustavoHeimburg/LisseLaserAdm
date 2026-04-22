@@ -13,7 +13,8 @@
         "preco": "80.99",
         "imagens": "src\/images\/linhaalba.png",
         "publico": "",
-        "avaliacoes": "520"
+        "avaliacoes": "520",
+        "ativo": true
     },
     {
         "categoria": "feminino",

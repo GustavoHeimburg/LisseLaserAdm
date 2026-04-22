@@ -95,10 +95,9 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             </li>
         </ul>
 
-        <button class="btn-default"
-                onclick="window.open('https://wa.me/5549920014288?text=Olá,%20tenho%20interesse%20em%20agendar%20um%20procedimento%20😊', '_blank')">
-            Agende aqui
-        </button>
+<a href="loja.php" class="btn-default">
+    AGENDE AQUI
+</a>
     </div>
 
 </header>

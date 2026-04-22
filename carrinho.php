@@ -50,12 +50,12 @@
 
         <div class="flex gap-3">
             <button id="saveOrderBtn"
-            class="px-6 py-3 rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 transition">
+            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 transition">
                 Salvar pedido
             </button>
 
             <button id="checkoutBtn"
-            class="px-8 py-3 rounded-xl bg-gradient-to-r from-green-500 to-emerald-400 hover:scale-105 transition shadow-xl">
+            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-gradient-to-r from-green-500 to-emerald-400 hover:scale-105 transition shadow-xl">
                 Finalizar no WhatsApp
             </button>
         </div>
@@ -104,7 +104,7 @@ function renderCart() {
 
         const div = document.createElement('div');
         div.className = `
-            flex justify-between items-center
+           flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
             bg-white/5 backdrop-blur-xl border border-white/10
             p-5 rounded-2xl shadow-lg hover:scale-[1.02] transition
         `;
@@ -119,11 +119,11 @@ function renderCart() {
 
                 <button class="fav-btn text-xl">${isFavorite ? '❤️' : '🤍'}</button>
 
-                <button class="qty-btn bg-white/10 px-3 py-1 rounded-lg">−</button>
+                <button class="qty-btn bg-white/10 px-4 py-2 text-lg rounded-lg">−</button>
 
                 <span class="text-lg font-semibold">${item.quantity}</span>
 
-                <button class="qty-btn bg-white/10 px-3 py-1 rounded-lg">+</button>
+                <button class="qty-btn bg-white/10 px-4 py-2 text-lg rounded-lg">+</button>
 
                 <button class="remove-btn text-red-400 text-xl">✕</button>
             </div>

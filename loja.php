@@ -55,7 +55,7 @@ Conheça nossos serviços
 DEPILAÇÃO FEMININA
 </h3>
 
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
 <?php foreach ($servicos as $servico): ?>
 <?php if ($servico['categoria'] === 'feminino' && ($servico['ativo'] ?? true)): ?>
@@ -110,7 +110,7 @@ data-price="<?= $servico['preco'] ?>"
 DEPILAÇÃO MASCULINA
 </h3>
 
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
 <?php foreach ($servicos as $servico): ?>
 <?php if ($servico['categoria'] === 'masculino' && ($servico['ativo'] ?? true)): ?>
@@ -164,7 +164,7 @@ data-price="<?= $servico['preco'] ?>"
 COMBOS
 </h3>
 
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
 <?php foreach ($servicos as $servico): ?>
 <?php if ($servico['categoria'] === 'combos' && ($servico['ativo'] ?? true)): ?>
@@ -181,7 +181,7 @@ COMBOS
 </span>
 <?php endif; ?>
 
-<div class="overflow-hidden rounded-2xl mb-4">
+<div class="w-full aspect-[4/3] object-cover rounded-2xl">
 <?php foreach ($servico['imagens'] as $img): ?>
 <img src="<?= $img ?>" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
 <?php endforeach; ?>
