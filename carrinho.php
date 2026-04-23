@@ -29,10 +29,6 @@
             Seu carrinho
         </h1>
 
-        <button id="clearCartBtn"
-        class="px-4 py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 transition">
-            Limpar
-        </button>
     </div>
 
     <div id="cart-items" class="space-y-6"></div>
@@ -48,23 +44,19 @@
             <strong id="cart-total" class="text-4xl font-bold text-green-400">R$ 0,00</strong>
         </div>
 
-        <div class="flex gap-3">
-            <button id="saveOrderBtn"
-            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 transition">
+        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto z-50">
+
+            <button id="saveOrderBtn" type="button"
+            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-yellow-500/20 hover:bg-yellow-500/30 transition active:scale-95 touch-manipulation">
                 Salvar pedido
             </button>
 
-            <button id="checkoutBtn"
-            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-gradient-to-r from-green-500 to-emerald-400 hover:scale-105 transition shadow-xl">
+            <button id="checkoutBtn" type="button"
+            class="w-full sm:w-auto px-6 py-4 text-lg rounded-xl bg-gradient-to-r from-green-500 to-emerald-400 hover:scale-105 transition active:scale-95 shadow-xl touch-manipulation">
                 Finalizar no WhatsApp
             </button>
-        </div>
-    </div>
 
-    <!-- HISTÓRICO -->
-    <div class="mt-20">
-        <h2 class="text-2xl font-bold mb-6">Histórico de pedidos</h2>
-        <div id="order-history" class="space-y-4"></div>
+        </div>
     </div>
 
 </div>
@@ -84,17 +76,20 @@ function saveCart() {
 }
 
 function formatPrice(value) {
-    return value.toFixed(2).replace('.', ',');
+    return Number(value).toFixed(2).replace('.', ',');
 }
 
+// CART RENDER
 function renderCart() {
+    if (!cartItemsContainer) return;
+
     cartItemsContainer.innerHTML = '';
     let total = 0;
 
     if (cartItems.length === 0) {
-        emptyCart.classList.remove('hidden');
+        emptyCart?.classList.remove('hidden');
     } else {
-        emptyCart.classList.add('hidden');
+        emptyCart?.classList.add('hidden');
     }
 
     cartItems.forEach((item, index) => {
@@ -104,7 +99,7 @@ function renderCart() {
 
         const div = document.createElement('div');
         div.className = `
-           flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
+            flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3
             bg-white/5 backdrop-blur-xl border border-white/10
             p-5 rounded-2xl shadow-lg hover:scale-[1.02] transition
         `;
@@ -117,44 +112,44 @@ function renderCart() {
 
             <div class="flex items-center gap-3">
 
-                <button class="fav-btn text-xl">${isFavorite ? '❤️' : '🤍'}</button>
+                <button class="fav-btn text-xl" type="button">${isFavorite ? '❤️' : '🤍'}</button>
 
-                <button class="qty-btn bg-white/10 px-4 py-2 text-lg rounded-lg">−</button>
+                <button class="qty-minus bg-white/10 px-4 py-2 text-lg rounded-lg" type="button">−</button>
 
                 <span class="text-lg font-semibold">${item.quantity}</span>
 
-                <button class="qty-btn bg-white/10 px-4 py-2 text-lg rounded-lg">+</button>
+                <button class="qty-plus bg-white/10 px-4 py-2 text-lg rounded-lg" type="button">+</button>
 
-                <button class="remove-btn text-red-400 text-xl">✕</button>
+                <button class="remove-btn text-red-400 text-xl" type="button">✕</button>
             </div>
         `;
 
-        const qtyBtns = div.querySelectorAll('.qty-btn');
         const favBtn = div.querySelector('.fav-btn');
+        const minusBtn = div.querySelector('.qty-minus');
+        const plusBtn = div.querySelector('.qty-plus');
         const removeBtn = div.querySelector('.remove-btn');
 
-        qtyBtns[1].onclick = () => {
+        // EVENTS (mobile-safe)
+        plusBtn.addEventListener('click', () => {
             item.quantity++;
             saveCart();
             renderCart();
-        };
+        });
 
-        qtyBtns[0].onclick = () => {
+        minusBtn.addEventListener('click', () => {
             item.quantity--;
-            if (item.quantity <= 0) {
-                cartItems.splice(index, 1);
-            }
+            if (item.quantity <= 0) cartItems.splice(index, 1);
             saveCart();
             renderCart();
-        };
+        });
 
-        removeBtn.onclick = () => {
+        removeBtn.addEventListener('click', () => {
             cartItems.splice(index, 1);
             saveCart();
             renderCart();
-        };
+        });
 
-        favBtn.onclick = () => {
+        favBtn.addEventListener('click', () => {
             if (favorites.includes(item.name)) {
                 favorites = favorites.filter(f => f !== item.name);
             } else {
@@ -163,20 +158,24 @@ function renderCart() {
 
             localStorage.setItem('favorites', JSON.stringify(favorites));
             renderCart();
-        };
+        });
 
         cartItemsContainer.appendChild(div);
     });
 
-    cartTotal.innerText = `R$ ${formatPrice(total)}`;
+    if (cartTotal) {
+        cartTotal.innerText = `R$ ${formatPrice(total)}`;
+    }
 }
 
+// HISTORY
 function renderHistory() {
+    if (!historyContainer) return;
+
     historyContainer.innerHTML = '';
 
     orderHistory.forEach(order => {
         const div = document.createElement('div');
-
         div.className = 'bg-white/5 p-4 rounded-xl border border-white/10';
 
         div.innerHTML = `
@@ -189,60 +188,72 @@ function renderHistory() {
     });
 }
 
+// WHATSAPP MESSAGE
 function gerarMensagemWhatsApp() {
-    let mensagem = 'Olá! Gostaria de agendar:\\n\\n';
+    let mensagem = 'Olá! Gostaria de agendar:\n\n';
 
     cartItems.forEach(item => {
-        mensagem += `• ${item.name} (x${item.quantity}) - R$ ${formatPrice(item.price)}\\n`;
+        mensagem += `• ${item.name} (x${item.quantity}) - R$ ${formatPrice(item.price)}\n`;
     });
 
     const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-    mensagem += `\\nTotal: R$ ${formatPrice(total)}`;
+    mensagem += `\nTotal: R$ ${formatPrice(total)}`;
 
     return encodeURIComponent(mensagem);
 }
 
-document.getElementById('checkoutBtn').onclick = () => {
-    if (cartItems.length === 0) return alert('Carrinho vazio');
+// SAFE EVENT BINDING (MOBILE FIX 🔥)
+function bindEvents() {
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const saveBtn = document.getElementById('saveOrderBtn');
+    const clearBtn = document.getElementById('clearCartBtn');
 
-    const numero = '5549920014288';
-    const mensagem = gerarMensagemWhatsApp();
+    checkoutBtn?.addEventListener('click', () => {
+        if (cartItems.length === 0) return alert('Carrinho vazio');
 
-    window.open(`https://wa.me/${numero}?text=${mensagem}`, '_blank');
-};
+        const numero = '5549920014288';
+        const mensagem = gerarMensagemWhatsApp();
 
-document.getElementById('saveOrderBtn').onclick = () => {
-    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-    orderHistory.unshift({
-        date: new Date().toLocaleString('pt-BR'),
-        items: cartItems.map(i => `${i.name} x${i.quantity}`).join(', '),
-        total
+        // MAIS COMPATÍVEL QUE window.open
+        window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
     });
 
-    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
-    renderHistory();
-};
+    saveBtn?.addEventListener('click', () => {
+        const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-document.getElementById('clearCartBtn').onclick = () => {
-    cartItems = [];
-    saveCart();
-    renderCart();
-};
+        orderHistory.unshift({
+            date: new Date().toLocaleString('pt-BR'),
+            items: cartItems.map(i => `${i.name} x${i.quantity}`).join(', '),
+            total
+        });
 
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+        renderHistory();
+    });
+
+    clearBtn?.addEventListener('click', () => {
+        cartItems = [];
+        saveCart();
+        renderCart();
+    });
+}
+
+// STORAGE SYNC
 window.addEventListener('storage', () => {
     cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     renderCart();
 });
 
+// INIT
 renderCart();
 renderHistory();
+bindEvents();
 
+// SERVICE WORKER
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
-
 </script>
 </body>
 </html>

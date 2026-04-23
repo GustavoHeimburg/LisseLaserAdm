@@ -176,10 +176,8 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
         const isActive = item.classList.contains('active');
 
-        // fecha todos
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
 
-        // abre só o clicado
         if (!isActive) {
             item.classList.add('active');
         }
@@ -250,3 +248,4 @@ function quick(text) {
     input.value = text;
     send();
 }
+

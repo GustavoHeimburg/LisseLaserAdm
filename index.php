@@ -16,6 +16,8 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     <meta property="og:type" content="website">
     <meta property="og:image" content="src/imagens/og-capa.png">
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="icon" type="image/png" href="src/images/favlasr.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -57,49 +59,31 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
 
         <ul id="nav_list">
-            <li class="nav-item active">
-                <a href="#home">Início</a>
-            </li>
-            <li class="nav-item">
-                <a href="#testimonials">Sobre</a>
-            </li>
-            <li class="nav-item">
-                <a href="#faq">Duvidas</a>
-            </li>
-            <li class="nav-item">
-                <a href="#localizacao">Localização</a>
-            </li>
+            <li class="nav-item active"><a href="#home">Início</a></li>
+            <li class="nav-item"><a href="#testimonials">Sobre</a></li>
+            <li class="nav-item"><a href="#faq">Dúvidas</a></li>
+            <li class="nav-item"><a href="#localizacao">Localização</a></li>
         </ul>
-<a href="loja.php" class="btn-default">
-    AGENDE AQUI
-</a>
 
-        <button id="mobile_btn">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+        <a href="loja.php"
+           class="px-6 py-3 rounded-full font-semibold bg-[#E9A209] text-white shadow-[0_0_20px_rgba(233,162,9,0.6)] hover:scale-105 transition duration-300">
+            Agende agora ✨
+        </a>
     </nav>
 
     <div id="mobile_menu">
         <ul id="mobile_nav_list">
-            <li class="nav-item">
-                <a href="#home">Início</a>
-            </li>
-            <li class="nav-item">
-                <a href="#testimonials">Sobre</a>
-            </li>
-             <li class="nav-item">
-                <a href="#faq">Duvidas</a>
-             </li>
-            <li class="nav-item">
-                <a href="#localizacao">Localização</a>
-            </li>
+            <li class="nav-item"><a href="#home">Início</a></li>
+            <li class="nav-item"><a href="#testimonials">Sobre</a></li>
+            <li class="nav-item"><a href="#faq">Dúvidas</a></li>
+            <li class="nav-item"><a href="#localizacao">Localização</a></li>
         </ul>
 
-<a href="loja.php" class="btn-default">
-    AGENDE AQUI
-</a>
+        <a href="loja.php"
+           class="px-6 py-3 rounded-full font-semibold bg-[#E9A209] text-white shadow-[0_0_20px_rgba(233,162,9,0.6)] hover:scale-105 transition duration-300">
+            Agende agora ✨
+        </a>
     </div>
-
 </header>
 
 <main id="content">
@@ -355,10 +339,8 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     </footer>
 </aside>
 
-<!-- BOTÃO -->
 <div id="chat-btn">💬</div>
 
-<!-- CHAT -->
 <div id="chatbox">
 
     <div class="chat-header">
@@ -387,6 +369,19 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     </div>
 
 </div>
+
+<script>
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+</script>
+
 <script src="src/javascript/script.js"></script>
 <script src="src/javascript/carrinho.js"></script>
 </body>
