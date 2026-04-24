@@ -187,37 +187,43 @@ function renderHistory() {
         historyContainer.appendChild(div);
     });
 }
-
-// WHATSAPP MESSAGE
-function gerarMensagemWhatsApp() {
-    let mensagem = 'Olá! Gostaria de agendar:\n\n';
+function gerarMensagemWhatsApp(nome) {
+    let mensagem = `Olá ${nome}! \n\n`;
+    mensagem += `Seja bem-vindo(a) à Lisse Laser \n`;
+    mensagem += `Recebemos seu interesse nos seguintes serviços:\n\n`;
 
     cartItems.forEach(item => {
-        mensagem += `• ${item.name} (x${item.quantity}) - R$ ${formatPrice(item.price)}\n`;
+        mensagem += `• ${item.name} (x${item.quantity})\n`;
     });
 
-    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-    mensagem += `\nTotal: R$ ${formatPrice(total)}`;
+    mensagem += `\nEm breve iremos te atender e finalizar seu agendamento`;
 
     return encodeURIComponent(mensagem);
 }
 
-// SAFE EVENT BINDING (MOBILE FIX 🔥)
 function bindEvents() {
     const checkoutBtn = document.getElementById('checkoutBtn');
     const saveBtn = document.getElementById('saveOrderBtn');
     const clearBtn = document.getElementById('clearCartBtn');
 
-    checkoutBtn?.addEventListener('click', () => {
-        if (cartItems.length === 0) return alert('Carrinho vazio');
+   checkoutBtn?.addEventListener('click', () => {
+       if (cartItems.length === 0) {
+           alert('Carrinho vazio');
+           return;
+       }
 
-        const numero = '5549920014288';
-        const mensagem = gerarMensagemWhatsApp();
+       let nome = prompt('Digite seu nome para continuar:');
 
-        // MAIS COMPATÍVEL QUE window.open
-        window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
-    });
+       if (!nome || nome.trim() === '') {
+           alert('Por favor, informe seu nome 😊');
+           return;
+       }
+
+       const numero = '5549920014288';
+       const mensagem = gerarMensagemWhatsApp(nome.trim());
+
+       window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
+   });
 
     saveBtn?.addEventListener('click', () => {
         const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -254,6 +260,7 @@ bindEvents();
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
+
 </script>
 </body>
 </html>
