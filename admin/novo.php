@@ -7,10 +7,8 @@
 <meta charset="UTF-8">
 <title>Novo Serviço</title>
 
-<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -22,7 +20,6 @@ body{
     padding:40px;
 }
 
-/* CARD */
 .form-container{
     max-width:650px;
     margin:auto;
@@ -40,7 +37,6 @@ body{
     to{opacity:1; transform:translateY(0);}
 }
 
-/* TITULO */
 .form-container h2{
     margin-bottom:25px;
     font-size:26px;
@@ -49,12 +45,10 @@ body{
     -webkit-text-fill-color: transparent;
 }
 
-/* GRUPOS */
 .form-group{
     margin-bottom:18px;
 }
 
-/* LABEL */
 .form-group label{
     display:block;
     margin-bottom:6px;
@@ -62,7 +56,6 @@ body{
     color:#cbd5f5;
 }
 
-/* INPUTS */
 input, textarea, select{
     width:100%;
     padding:12px;
@@ -84,13 +77,11 @@ textarea{
     min-height:100px;
 }
 
-/* FILE */
 input[type=file]{
     background:none;
     border:none;
 }
 
-/* PREVIEW */
 .preview{
     display:flex;
     gap:10px;
@@ -106,7 +97,6 @@ input[type=file]{
     border:1px solid rgba(255,255,255,0.1);
 }
 
-/* BOTÃO */
 .btn-save{
     width:100%;
     background: linear-gradient(135deg,#22c55e,#16a34a);
@@ -125,7 +115,6 @@ input[type=file]{
     box-shadow:0 10px 25px rgba(34,197,94,0.4);
 }
 
-/* VOLTAR */
 .voltar{
     display:inline-block;
     margin-top:20px;
@@ -138,7 +127,6 @@ input[type=file]{
     color:#38bdf8;
 }
 
-/* TOAST */
 .toast{
     position:fixed;
     bottom:30px;
@@ -226,7 +214,6 @@ input[type=file]{
 
 <script>
 
-/* ===== MOSTRAR PUBLICO ===== */
 const categoria = document.getElementById('categoria');
 const publicoGroup = document.getElementById('publico-group');
 
@@ -234,7 +221,6 @@ categoria.addEventListener('change', () => {
     publicoGroup.style.display = categoria.value === 'combos' ? 'block' : 'none';
 });
 
-/* ===== PREVIEW IMAGEM ===== */
 const upload = document.getElementById('upload');
 const preview = document.getElementById('preview');
 
@@ -254,7 +240,6 @@ upload.addEventListener('change', () => {
     });
 });
 
-/* ===== FORMATA PREÇO ===== */
 const preco = document.getElementById('preco');
 
 preco.addEventListener('input', () => {
@@ -264,7 +249,6 @@ preco.addEventListener('input', () => {
     preco.value = v;
 });
 
-/* ===== TOAST FAKE UX ===== */
 document.getElementById('form').addEventListener('submit', () => {
     const toast = document.getElementById('toast');
     toast.classList.add('show');

@@ -204,7 +204,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
     <div class="faq-container">
 
-        <!-- ITEM -->
+
         <div class="faq-item">
             <div class="faq-question">
                 A depilação a laser dói?
@@ -217,7 +217,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             </div>
         </div>
 
-        <!-- ITEM -->
+
         <div class="faq-item">
             <div class="faq-question">
                 Quantas sessões são necessárias?
@@ -253,7 +253,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
             </div>
         </div>
 
-        <!-- ITEM -->
+
         <div class="faq-item">
             <div class="faq-question">
                 Funciona para todos os tipos de pele?

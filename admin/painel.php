@@ -38,7 +38,6 @@ body{
     padding:30px;
 }
 
-/* HEADER */
 .admin-top{
     display:flex;
     justify-content:space-between;
@@ -53,7 +52,6 @@ body{
     -webkit-text-fill-color:transparent;
 }
 
-/* BOTÃO */
 .btn-add{
     background:linear-gradient(135deg,#22c55e,#16a34a);
     padding:12px 22px;
@@ -69,7 +67,6 @@ body{
     transform:scale(1.05);
 }
 
-/* BUSCA */
 .search-box input{
     width:100%;
     padding:14px;
@@ -81,14 +78,12 @@ body{
     color:#fff;
 }
 
-/* GRID */
 .dishes-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
 }
 
-/* CARD */
 .dish{
     background:rgba(255,255,255,0.05);
     backdrop-filter:blur(14px);
@@ -104,7 +99,6 @@ body{
     box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
-/* IMAGEM */
 .rosto-photo{
     width:100%;
     height:160px;
@@ -113,7 +107,6 @@ body{
     margin-bottom:10px;
 }
 
-/* TEXTO */
 .dish-title{
     font-size:18px;
     font-weight:600;
@@ -126,13 +119,11 @@ body{
     margin:5px 0 10px;
 }
 
-/* PREÇO */
 .dish-price h4{
     font-size:22px;
     color:#38bdf8;
 }
 
-/* AÇÕES */
 .admin-actions{
     display:flex;
     gap:8px;
@@ -159,7 +150,6 @@ body{
 .btn-restore{background:#3b82f6;}
 .btn-delete-perm{background:#000;}
 
-/* TITULO CATEGORIA */
 .categoria{
     font-size:24px;
     font-weight:700;
@@ -167,7 +157,6 @@ body{
     color:#e2e8f0;
 }
 
-/* LIXEIRA */
 .trash-card{
     opacity:0.5;
     filter:grayscale(100%);
@@ -198,7 +187,6 @@ body{
 
     <div style="display:flex; gap:10px;">
 
-        <!-- LIXEIRA -->
         <a href="lixeira.php" class="btn-trash">
             🗑 Lixeira (<?= $lixeiraCount ?>)
         </a>

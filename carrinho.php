@@ -79,7 +79,6 @@ function formatPrice(value) {
     return Number(value).toFixed(2).replace('.', ',');
 }
 
-// CART RENDER
 function renderCart() {
     if (!cartItemsContainer) return;
 
@@ -129,7 +128,6 @@ function renderCart() {
         const plusBtn = div.querySelector('.qty-plus');
         const removeBtn = div.querySelector('.remove-btn');
 
-        // EVENTS (mobile-safe)
         plusBtn.addEventListener('click', () => {
             item.quantity++;
             saveCart();
@@ -168,7 +166,6 @@ function renderCart() {
     }
 }
 
-// HISTORY
 function renderHistory() {
     if (!historyContainer) return;
 
@@ -245,18 +242,15 @@ function bindEvents() {
     });
 }
 
-// STORAGE SYNC
 window.addEventListener('storage', () => {
     cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     renderCart();
 });
 
-// INIT
 renderCart();
 renderHistory();
 bindEvents();
 
-// SERVICE WORKER
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }

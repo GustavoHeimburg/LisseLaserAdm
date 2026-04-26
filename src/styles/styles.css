@@ -644,7 +644,7 @@ text-decoration:none;
     transition: 0.4s ease;
 }
 
-/* ATIVO */
+
 .faq-item.active .faq-answer {
     max-height: 200px;
 }
@@ -654,7 +654,6 @@ text-decoration:none;
 }
 #chat-btn {
     position: fixed;
-    bottom: 90px;
     right: 20px;
     background: #6366f1;
     color: #fff;
@@ -667,11 +666,12 @@ text-decoration:none;
     font-size:24px;
     cursor:pointer;
     box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    bottom: 20px;
+    z-index: 9999;
 }
 
 #chatbox {
     position: fixed;
-    bottom: 160px;
     right: 20px;
     width: 320px;
     background: #fff;
@@ -680,6 +680,8 @@ text-decoration:none;
     flex-direction: column;
     box-shadow:0 15px 40px rgba(0,0,0,0.2);
     overflow: hidden;
+    bottom: 90px;
+    z-index: 9999;
 }
 
 .chat-header {

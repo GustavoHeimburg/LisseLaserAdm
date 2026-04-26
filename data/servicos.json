@@ -3,8 +3,11 @@
         "categoria": "feminino",
         "nome": "AUREOLAS",
         "descricao": "Remoção precisa e segura dos pelos ao redor da aréola, proporcionando um aspecto mais limpo e delicado à região.",
-        "preco": "45.90",
-        "imagens": "src\/images\/aureola.png"
+        "preco": "50.00",
+        "imagens": "src\/images\/aureola.png",
+        "publico": "",
+        "avaliacoes": "",
+        "ativo": true
     },
     {
         "categoria": "feminino",
@@ -21,7 +24,8 @@
         "nome": "AXILA",
         "descricao": "Remoção eficaz dos pelos da axila, proporcionando uma pele mais lisa, limpa e confortável.",
         "preco": "59.99",
-        "imagens": "src\/images\/axila.png"
+        "imagens": "src\/images\/axila.png",
+        "ativo": true
     },
     {
         "categoria": "feminino",
@@ -35,7 +39,8 @@
         "nome": "VIRILHA CAVADA",
         "descricao": "Remoção uniforme que valoriza a estética da região, garantindo mais conforto e cuidado com a pele.",
         "preco": "69.99",
-        "imagens": "src\/images\/virilhacavadaa.png"
+        "imagens": "src\/images\/virilhacavadaa.png",
+        "ativo": true
     },
     {
         "categoria": "feminino",

@@ -28,7 +28,6 @@ body{
     padding:40px;
 }
 
-/* CONTAINER */
 .form-container{
     max-width:650px;
     margin:auto;
@@ -40,7 +39,6 @@ body{
     box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
-/* TITULO */
 .form-container h2{
     margin-bottom:25px;
     font-size:28px;
@@ -49,12 +47,10 @@ body{
     -webkit-text-fill-color:transparent;
 }
 
-/* GROUP */
 .form-group{
     margin-bottom:20px;
 }
 
-/* LABEL */
 .form-group label{
     display:block;
     margin-bottom:6px;
@@ -62,7 +58,6 @@ body{
     color:#cbd5f5;
 }
 
-/* INPUTS */
 input, textarea, select{
     width:100%;
     padding:12px;
@@ -83,12 +78,10 @@ textarea{
     min-height:100px;
 }
 
-/* FILE */
 input[type=file]{
     background:none;
 }
 
-/* PREVIEW */
 .preview{
     display:flex;
     gap:10px;
@@ -103,7 +96,6 @@ input[type=file]{
     border-radius:10px;
 }
 
-/* BOTÃO */
 .btn-save{
     width:100%;
     background:linear-gradient(135deg,#22c55e,#16a34a);
@@ -191,7 +183,6 @@ Salvar Serviço
 
 <script>
 
-/* MOSTRAR/ESCONDER PUBLICO */
 const categoria = document.getElementById('categoria');
 const publicoGroup = document.getElementById('publico-group');
 
@@ -201,7 +192,6 @@ function verificarCategoria(){
 categoria.addEventListener('change', verificarCategoria);
 verificarCategoria();
 
-/* PREVIEW IMAGENS */
 const fileInput = document.getElementById('fileInput');
 const preview = document.getElementById('preview');
 

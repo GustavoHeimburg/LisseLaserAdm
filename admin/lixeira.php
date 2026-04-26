@@ -12,7 +12,6 @@ $servicos = json_decode(file_get_contents($arquivo), true);
 <meta charset="UTF-8">
 <title>Lixeira</title>
 
-<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -24,7 +23,6 @@ body{
     padding:40px;
 }
 
-/* TOPO */
 .top{
     display:flex;
     justify-content:space-between;
