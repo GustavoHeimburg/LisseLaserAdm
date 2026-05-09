@@ -6,11 +6,6 @@
     gap: 48px;
 }
 
-#testimonial_chef {
-    width: 500px;
-    height: auto;
-}
-
 #testimonials .section-subtitle {
     font-size: 3rem;
 }
@@ -54,48 +49,241 @@
 }
 
 @media screen and (max-width: 1170px) {
-     #testimonials {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        #testimonials_content {
-            width: 70%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            order: 1;
-        }
+    #testimonials {
 
-        #testimonial_chef {
-            display: block; /* VOLTA A APARECER */
-            width: 100%;
-            margin-top: 30px;
-            order: 2; /* FICA EMBAIXO DO BOTÃO */
-        }
+        min-height: auto;
 
-        #testimonials .section-subtitle {
-            text-align: center;
-            font-size: 2.5rem;
-        }
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 32px;
+
+        padding: 70px 22px;
     }
+
+    #testimonials_content {
+
+        width: 100%;
+
+        max-width: 760px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        order: 1;
+    }
+
+    #testimonials .section-title {
+
+        font-size: .95rem;
+
+        letter-spacing: 3px;
+    }
+
+    #testimonials .section-subtitle {
+
+        font-size: clamp(2rem, 5vw, 3rem);
+
+        line-height: 1.1;
+
+        margin-top: 10px;
+    }
+
+    #feedbacks {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        margin-top: 26px;
+
+        margin-bottom: 0;
+    }
+
+    .feedback {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        padding: 18px;
+
+        border-radius: 24px;
+
+        background: #fff;
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+        text-align: left;
+    }
+
+    .feedback-avatar {
+
+        width: 82px;
+
+        height: 82px;
+
+        min-width: 82px;
+
+        border-radius: 18px;
+
+        object-fit: cover;
+    }
+
+    .feedback-content {
+
+        width: 100%;
+    }
+
+    .feedback-content p {
+        font-size: .9rem;
+        line-height: 1.55;
+        line-height: 1.55;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .feedback-content p:first-child {
+
+        font-size: 1rem;
+
+        font-weight: 700;
+
+        margin-bottom: 8px;
+    }
+
+    .feedback-content p span {
+
+        font-size: .9rem;
+        display: flex;
+
+        align-items: center;
+
+        gap: 2px;
+
+        margin-top: -2px;
+        color: var(--color-primary-6);
+
+        position: relative;
+
+        top: -8px;
+    }
+}
 
 @media screen and (max-width: 600px) {
-    #testimonials .section-subtitle {
-            font-size: 2rem;
-        }
 
-        #testimonials_content {
-            width: 100%;
-        }
+    #testimonials {
 
-        #testimonial_chef img {
-            width: 100%;
-            max-width: 320px;
-        }
+        padding: 48px 16px;
 
-        .feedback {
-            flex-direction: column;
-        }
+        gap: 24px;
     }
+
+    #testimonials .section-title {
+
+        font-size: .82rem;
+
+        letter-spacing: 2px;
+    }
+
+    #testimonials .section-subtitle {
+
+        font-size: 1.7rem;
+
+        line-height: 1.2;
+
+        max-width: 320px;
+    }
+
+    #feedbacks {
+
+        gap: 14px;
+
+        margin-top: 22px;
+    }
+
+    .feedback {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding: 16px;
+
+        border-radius: 22px;
+
+        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .feedback-avatar {
+
+        width: 58px;
+
+        height: 58px;
+
+        min-width: 58px;
+
+        border-radius: 14px;
+    }
+
+    .feedback-content {
+
+        width: 100%;
+    }
+
+    .feedback-content p {
+
+        font-size: .9rem;
+        line-height: 1.55;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .feedback-content p:first-child {
+
+        font-size: .95rem;
+
+        margin-bottom: 6px;
+    }
+
+    .feedback-content p span {
+
+        font-size: .9rem;
+        display: flex;
+
+        align-items: center;
+
+        gap: 2px;
+
+        margin-top: -2px;
+        color: var(--color-primary-6);
+
+        position: relative;
+
+        top: -60px;
+    }
+
+}

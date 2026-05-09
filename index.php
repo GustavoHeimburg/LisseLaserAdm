@@ -88,14 +88,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 <main id="content">
     <section id="home">
-        <div class="shape">
-            <div class="shape_content">
-                <p class="shape_title">SOBRE MIM</p>
-                <p class="shape_text">
-                    Sou Eliza e atuo na área de depilação a laser há mais de 4 anos. Nesse período, tive a oportunidade de ajudar centenas de pessoas — mulheres e homens — a reencontrarem confiança, liberdade e conforto em sua própria pele. Meu propósito sempre foi oferecer um atendimento que vá além da técnica, com presença, cuidado e atenção aos detalhes. Dessa paixão nasceu a Lisse, a realização de um sonho pessoal e profissional.
-                </p>
-            </div>
-        </div>
 
         <div id="cta">
             <h1 class="title">
@@ -119,11 +111,110 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 </a>
             </div>
         </div>
+
+        <div class="shape">
+            <div class="shape">
+
+                <div class="shape_image">
+                    <img src="src/images/Sem%20título.png" alt="Eliza - Lisse Laser">
+                </div>
+
+                <div class="shape_content">
+
+                    <p class="shape_title">
+                        SOBRE MIM
+                    </p>
+
+                    <p class="shape_text">
+                        Sou a Eliza e atuo na área da estética e laser há mais de 4 anos.
+
+                        Nesse período, tive a oportunidade de ajudar milhares de pessoas —
+                        mulheres e homens — a reencontrarem confiança e liberdade em sua própria pele.
+
+                        Meu propósito sempre foi oferecer um atendimento que vá além da técnica,
+                        tendo presença, cuidado e atenção aos detalhes.
+
+                        Dessa paixão nasceu a Lisse, a realização de um sonho pessoal e profissional.
+                    </p>
+
+                </div>
+
+            </div>
+
     </section>
 </main>
+<section id="faq">
 
+    <h2 class="section-title">Dúvidas Frequentes</h2>
+    <h3 class="section-subtitle">Tudo que você precisa saber antes de agendar</h3>
+
+    <div class="faq-container">
+
+
+        <div class="faq-item">
+            <div class="faq-question">
+                A depilação a laser dói?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                O desconforto é mínimo e varia conforme a sensibilidade de cada pessoa.
+                A maioria descreve a sensação como leves “pinicadas”,
+                utilizamos técnicas que tornam o atendimento mais confortável.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                A depilação a laser pode clarear a região?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Sim. Além de reduzir os pelos, a depilação a laser ajuda a diminuir
+                manchas escuras da região, foliculite e irritações causadas pelos pelos encravados,
+                deixando a pele mais uniforme e clara.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Quantas sessões são necessárias?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Normalmente são indicadas de 6 a 10 sessões.
+                Antes da primeira sessão, se solicitado, realizamos uma avaliação personalizada para ver quantas sessões você precisa!
+                    Analisando seu biótipo para garantir os melhores resultados.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Como funciona o agendamento e manutenção?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                As sessões possuem intervalos de 30 a 45 dias, com confirmação enviada 1 dia antes! Respeitar esse prazo é essencial,
+                já que o laser age com mais eficácia nos pelos em fase de crescimento.
+                Após finalizar o tratamento, algumas pessoas podem precisar de manutenção semestral, em média 2 vezes ao ano.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Quais cuidados antes das sessões?
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                Os pelos devem ser raspados com lâmina 1 dia antes da sessão. No dia do atendimento, evite cremes, óleos e desodorantes na região.
+                Durante a menstruação, o ideal é realizar no final do período devido à sensibilidade da pele.
+                Gestantes NÃO podem fazer depilação a laser.
+            </div>
+        </div>
+    </div>
+
+</section>
     <section id="testimonials">
-        <img src="src/images/Sem%20título.png" id="testimonial_chef" alt="">
+
 
         <div id="testimonials_content">
             <h2 class="section-title">
@@ -197,64 +288,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </div>
 
     </section>
-<section id="faq">
 
-    <h2 class="section-title">Dúvidas Frequentes</h2>
-    <h3 class="section-subtitle">Tudo que você precisa saber antes de agendar</h3>
-
-    <div class="faq-container">
-
-
-        <div class="faq-item">
-            <div class="faq-question">
-                A depilação a laser dói?
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                O desconforto é mínimo e varia conforme a sensibilidade de cada pessoa.
-                A maioria descreve a sensação como leves “pinicadas”,
-                utilizamos técnicas que tornam o atendimento mais confortável.
-            </div>
-        </div>
-
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Quantas sessões são necessárias?
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Normalmente são indicadas de 6 a 10 sessões, variando conforme a região, tipo de pele e pelos.
-                Antes da primeira sessão, se solicitado, realizamos uma avaliação
-                personalizada para garantir os melhores resultados.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Quais cuidados antes da sessão?
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Não usar cera ou pinça, fazer a raspagem dos pelos 1 dia antes da sessão
-                com a lâmina e no dia do atendimento não utilizar cremes, óleos ou desodorantes nas regiões a serem tratadas.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                Funciona para todos os tipos de pele?
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Sim. Com a tecnologia adequada e uma avaliação profissional, a depilação a
-                laser pode ser realizada com segurança em diferentes tipos e tons de pele.
-            </div>
-        </div>
-
-    </div>
-
-</section>
 <section id="localizacao">
     <h2>Localização – Lisse Laser e Estética em Xanxerê</h2>
 

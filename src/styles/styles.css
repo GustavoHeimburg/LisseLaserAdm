@@ -940,7 +940,6 @@ text-decoration:none;
     transform: scale(1.05);
 }
 
-/* MOBILE */
 
 @media(max-width:768px) {
 
@@ -1042,3 +1041,4 @@ header.scrolled {
 .footer-credit{
     gap: 14px;
 }
+
