@@ -211,9 +211,9 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                A sensação varia de pessoa para pessoa, mas geralmente é leve e tolerável.
-                Muitos clientes comparam a pequenos "beliscões" rápidos. Utilizamos técnicas
-                para tornar o procedimento o mais confortável possível.
+                O desconforto é mínimo e varia conforme a sensibilidade de cada pessoa.
+                A maioria descreve a sensação como leves “pinicadas”,
+                utilizamos técnicas que tornam o atendimento mais confortável.
             </div>
         </div>
 
@@ -224,35 +224,22 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                Em média, são necessárias de 6 a 10 sessões para resultados duradouros,
-                pois o laser atua melhor em fases específicas do crescimento do pelo.
+                Normalmente são indicadas de 6 a 10 sessões, variando conforme a região, tipo de pele e pelos.
+                Antes da primeira sessão, se solicitado, realizamos uma avaliação
+                personalizada para garantir os melhores resultados.
             </div>
         </div>
 
-        <!-- ITEM -->
         <div class="faq-item">
             <div class="faq-question">
                 Quais cuidados antes da sessão?
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                Evite exposição ao sol, não utilize cera ou pinça e mantenha a pele limpa.
-                O ideal é raspar os pelos com lâmina 1 dia antes do procedimento.
+                Não usar cera ou pinça, fazer a raspagem dos pelos 1 dia antes da sessão
+                com a lâmina e no dia do atendimento não utilizar cremes, óleos ou desodorantes nas regiões a serem tratadas.
             </div>
         </div>
-
-        <!-- ITEM -->
-        <div class="faq-item">
-            <div class="faq-question">
-                E depois da depilação, o que devo fazer?
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                Evite sol direto, use protetor solar e mantenha a pele hidratada.
-                Isso ajuda a garantir melhores resultados e evitar irritações.
-            </div>
-        </div>
-
 
         <div class="faq-item">
             <div class="faq-question">
@@ -260,8 +247,8 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="faq-answer">
-                Sim! A tecnologia atual permite atender diferentes tons de pele com segurança,
-                sempre com avaliação personalizada antes de iniciar o tratamento.
+                Sim. Com a tecnologia adequada e uma avaliação profissional, a depilação a
+                laser pode ser realizada com segurança em diferentes tipos e tons de pele.
             </div>
         </div>
 
@@ -314,32 +301,38 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     </div>
 </section>
 
-<footer>
-    <img src="src/images/wave.svg" alt="">
-</footer>
-<div id="cart-overlay"></div>
+<footer class="site-footer">
 
-<aside id="cart">
-    <header class="cart-header">
-        <h2>Seu carrinho</h2>
-        <button id="close-cart">&times;</button>
-    </header>
+    <img src="src/images/wave.svg" class="footer-wave" alt="">
 
-    <div id="cart-items"></div>
+    <div class="footer-inner">
 
-    <footer class="cart-footer">
-        <div class="cart-total">
-            <span>Total</span>
-            <strong id="cart-total">R$ 0,00</strong>
+        <div class="footer-left">
+            <img src="src/images/lisselogo.png" alt="Lisse">
         </div>
 
-        <button class="btn-default cart-checkout">
-            Finalizar no WhatsApp
-        </button>
-    </footer>
+        <div class="footer-right">
+
+            <a href="https://portifolio-two-nu-28.vercel.app" class="footer-credit">
+                <span>Desenvolvido por GH Softworks</span>
+                <img src="src/images/gh-logo.png" alt="GH">
+            </a>
+
+            <a href="#" class="footer-credit">
+                <span>Marketing por</span>
+                <img src="src/images/marketing-logo.png" alt="Cartaz">
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
 </aside>
 
-<div id="chat-btn">💬</div>
+<div id="chat-btn">
+    <i class="fa-solid fa-comment-dots"></i>
+</div>
 
 <div id="chatbox">
 
