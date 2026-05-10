@@ -66,8 +66,23 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </ul>
 
         <a href="loja.php"
-           class="px-6 py-3 rounded-full font-semibold bg-[#E9A209] text-white shadow-[0_0_20px_rgba(233,162,9,0.6)] hover:scale-105 transition duration-300">
-            Agende agora ✨
+           class="
+      inline-flex items-center justify-center gap-2
+      px-6 py-3
+      rounded-full
+      font-semibold text-sm
+      leading-none
+      text-white
+      bg-gradient-to-r from-[#E9D7A5] to-[#C9A86A]
+      shadow-[0_10px_25px_rgba(201,168,106,0.25)]
+      hover:scale-105
+      transition-all duration-300
+      whitespace-nowrap
+   ">
+
+            <span>Agende agora</span>
+            <span class="text-base">✨</span>
+
         </a>
     </nav>
 
@@ -80,8 +95,23 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
         </ul>
 
         <a href="loja.php"
-           class="px-6 py-3 rounded-full font-semibold bg-[#E9A209] text-white shadow-[0_0_20px_rgba(233,162,9,0.6)] hover:scale-105 transition duration-300">
-            Agende agora ✨
+           class="
+      inline-flex items-center justify-center gap-2
+      px-6 py-3
+      rounded-full
+      font-semibold text-sm
+      leading-none
+      text-white
+      bg-gradient-to-r from-[#E9D7A5] to-[#C9A86A]
+      shadow-[0_10px_25px_rgba(201,168,106,0.25)]
+      hover:scale-105
+      transition-all duration-300
+      whitespace-nowrap
+   ">
+
+            <span>Agende agora</span>
+            <span class="text-base">✨</span>
+
         </a>
     </div>
 </header>
@@ -290,51 +320,92 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     </section>
 
 <section id="localizacao">
-    <h2>Localização – Lisse Laser e Estética em Xanxerê</h2>
 
-    <div class="location-intro">
-        <p>
-            A <strong>Lisse Laser e Estética</strong> está localizada em Xanxerê – SC,
-            oferecendo depilação a laser feminina e masculina com atendimento profissional.
-        </p>
+    <div class="location-wrapper">
 
-        <p>
-            Atendemos no bairro <strong>La Salle</strong>, com fácil acesso para clientes
-            de Xanxerê e região. Agendamentos pelo WhatsApp.
-        </p>
-    </div>
+        <div class="location-content">
 
-    <div class="address-card">
-        <p class="address-line">
-            <strong>Endereço:</strong> Rua Padre Anchieta, 37 – Bairro La Salle, Xanxerê – SC
-        </p>
-        <p class="address-line">
-            <strong>Referência:</strong> Localizado em frente à antiga viação
-        </p>
+            <p class="location-tag">
+                LOCALIZAÇÃO
+            </p>
 
-        <div class="address-actions">
-            <a class="btn-address" href="https://wa.me/5549920014288" target="_blank" rel="noopener">
-                Chamar no WhatsApp
-            </a>
-            <a class="btn-address outline" href="https://maps.google.com/?q=Rua+Padre+Anchieta,+37,+Xanxerê+-+SC" target="_blank" rel="noopener">
-                Ver Rotas
-            </a>
+            <h2>
+                Venha conhecer a
+                <span>Lisse Laser & Estética</span>
+            </h2>
+
+            <p class="location-description">
+                Um espaço pensado para oferecer conforto, cuidado
+                e uma experiência premium em depilação a laser
+                feminina e masculina em Xanxerê.
+            </p>
+
+            <div class="address-card">
+
+                <div class="address-item">
+                    <span>📍</span>
+
+                    <div>
+                        <strong>Endereço</strong>
+
+                        <p>
+                            Rua Padre Anchieta, 37 – Bairro La Salle,
+                            Xanxerê – SC
+                        </p>
+                    </div>
+                </div>
+
+                <div class="address-item">
+                    <span>✨</span>
+
+                    <div>
+                        <strong>Referência</strong>
+
+                        <p>
+                            Em frente à antiga viação
+                        </p>
+                    </div>
+                </div>
+
+                <div class="address-actions">
+
+                    <a class="btn-address"
+                       href="https://wa.me/5549920014288"
+                       target="_blank"
+                       rel="noopener">
+
+                        Chamar no WhatsApp
+                    </a>
+
+                    <a class="btn-address outline"
+                       href="https://maps.google.com/?q=Rua+Padre+Anchieta,+37,+Xanxerê+-+SC"
+                       target="_blank"
+                       rel="noopener">
+
+                        Ver Rotas
+                    </a>
+
+                </div>
+            </div>
         </div>
+
+        <div class="map-container">
+
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.82983772901!2d-52.412659889344695!3d-26.877146876571018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4c349e5542cb3%3A0x64072c8f6d3ed961!2sLisse%20Laser%20e%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1767827859637!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+        </div>
+
     </div>
 
-    <div class="map-container">
-        <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.82983772901!2d-52.412659889344695!3d-26.877146876571018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4c349e5542cb3%3A0x64072c8f6d3ed961!2sLisse%20Laser%20e%20Est%C3%A9tica!5e0!3m2!1spt-BR!2sbr!4v1767827859637!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="350"
-                style="border:0;"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
 </section>
-
 <footer class="site-footer">
 
     <img src="src/images/wave.svg" class="footer-wave" alt="">
