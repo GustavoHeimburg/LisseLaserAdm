@@ -108,10 +108,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
         <div class="flex items-center gap-3">
 
-            <button class="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
-                🔍
-            </button>
-
             <a href="carrinho.php"
                class="relative w-11 h-11 rounded-2xl bg-gradient-to-r from-pink-500 to-blue-500 flex items-center justify-center shadow-lg shadow-pink-500/30 hover:scale-105 transition">
 
@@ -129,8 +125,6 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
     </div>
 
 </header>
-
-<!-- HERO -->
 
 <section class="relative z-10 overflow-hidden">
 
@@ -206,8 +200,6 @@ perfeita
     </div>
 
 </section>
-
-<!-- FEMININO -->
 
 <section id="feminino" class="relative z-10 px-6 py-20">
 
@@ -314,8 +306,6 @@ Popular
 
 </section>
 
-<!-- MASCULINO -->
-
 <section id="masculino" class="relative z-10 px-6 py-20">
 
     <div class="max-w-7xl mx-auto">
@@ -418,8 +408,6 @@ Premium
     </div>
 
 </section>
-
-<!-- COMBOS -->
 
 <section id="combos" class="relative z-10 px-6 py-20">
 
@@ -666,8 +654,6 @@ Melhor custo benefício
 
 </footer>
 
-<!-- MOBILE BAR -->
-
 <div class="fixed bottom-0 left-0 w-full md:hidden bg-[#070b14]/95 backdrop-blur-xl border-t border-white/10 px-2 py-3 flex items-center justify-between z-50 overflow-hidden">
 
     <a href="#feminino" class="w-1/3 flex flex-col items-center justify-center text-xs text-pink-400">
@@ -686,8 +672,6 @@ Melhor custo benefício
     </a>
 
 </div>
-
-<!-- TOAST -->
 
 <div id="toast"
      class="fixed bottom-24 right-6 bg-gradient-to-r from-green-500 to-emerald-400 text-white px-6 py-4 rounded-2xl shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 font-semibold">
