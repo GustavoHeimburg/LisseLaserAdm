@@ -1,4 +1,3 @@
-```php
 <?php
 $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 ?>
@@ -65,7 +64,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 <header class="sticky top-0 z-50 border-b border-[#e6ddd3] bg-[#f7f3ee]/90 backdrop-blur-2xl">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 
         <div class="flex items-center gap-3">
 
@@ -123,7 +122,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 
 <section class="relative z-10 overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
 
         <div>
 
@@ -131,7 +130,7 @@ $servicos = json_decode(file_get_contents("data/servicos.json"), true);
 ✨ Tecnologia avançada em estética
 </span>
 
-            <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-8 text-[#4b3b31]">
+            <h1 class="text-3xl md:text-5xl lg:text-7xl font-black leading-tight mb-6 md:mb-8 text-[#4b3b31]">
 
                 Sua pele
                 <span class="text-[#b08968]">
@@ -147,7 +146,7 @@ perfeita
 
             </p>
 
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-col sm:flex-row gap-3">
 
                 <a href="#feminino"
                    class="px-8 py-4 rounded-2xl bg-[#c8a98d] text-white font-semibold hover:scale-105 transition shadow-lg">
@@ -165,7 +164,7 @@ perfeita
 
             </div>
 
-            <div class="flex gap-10 mt-14">
+            <div class="grid grid-cols-3 gap-3 md:flex md:gap-10 mt-10 md:mt-14 text-center">
 
                 <div>
                     <h2 class="text-3xl font-black text-[#4b3b31]">+500</h2>
@@ -196,7 +195,7 @@ perfeita
 
 </section>
 
-<section id="feminino" class="relative z-10 px-6 py-20">
+<section id="feminino" class="relative z-10 px-4 md:px-6 py-20">
 
     <div class="max-w-7xl mx-auto">
 
@@ -252,11 +251,11 @@ Popular
 
                             </div>
 
-                            <h3 class="text-xl font-bold mb-2 text-[#4b3b31]">
+                            <h3 class="text-sm md:text-xl font-bold mb-2 text-[#4b3b31] leading-tight">
                                 <?= $servico['nome']; ?>
                             </h3>
 
-                            <p class="text-[#8b7767] text-sm leading-relaxed mb-6">
+                            <p class="hidden md:block text-[#8b7767] text-sm leading-relaxed mb-6">
                                 <?= $servico['descricao']; ?>
                             </p>
 
@@ -268,7 +267,7 @@ Popular
                                         R$<?= number_format($servico['preco'] * 1.25, 2, ',', '.'); ?>
                                     </p>
 
-                                    <h2 class="text-3xl font-black text-[#b08968]">
+                                    <h2 class="text-xl md:text-3xl font-black text-[#b08968]">
                                         R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                                     </h2>
 
@@ -301,7 +300,7 @@ Popular
 
 </section>
 
-<section id="masculino" class="relative z-10 px-6 py-20">
+<section id="masculino" class="relative z-10 px-4 md:px-6 py-20">
 
     <div class="max-w-7xl mx-auto">
 
@@ -325,7 +324,7 @@ Alta performance
 
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
 
             <?php foreach ($servicos as $servico): ?>
                 <?php if ($servico['categoria'] === 'masculino' && ($servico['ativo'] ?? true)): ?>
@@ -351,17 +350,17 @@ Premium
                                 <?php foreach ($imagens as $img): ?>
 
                                     <img src="<?= $img ?>"
-                                         class="w-full h-60 object-cover group-hover:scale-110 transition duration-700">
+                                         class="w-full h-36 md:h-60 object-cover group-hover:scale-110 transition duration-700">
 
                                 <?php endforeach; ?>
 
                             </div>
 
-                            <h3 class="text-xl font-bold mb-2 text-[#4b3b31]">
+                            <h3 class="text-sm md:text-xl font-bold mb-2 text-[#4b3b31] leading-tight">
                                 <?= $servico['nome']; ?>
                             </h3>
 
-                            <p class="text-[#8b7767] text-sm leading-relaxed mb-6">
+                            <p class="hidden md:block text-[#8b7767] text-sm leading-relaxed mb-6">
                                 <?= $servico['descricao']; ?>
                             </p>
 
@@ -373,7 +372,7 @@ Premium
                                         R$<?= number_format($servico['preco'] * 1.25, 2, ',', '.'); ?>
                                     </p>
 
-                                    <h2 class="text-3xl font-black text-[#b08968]">
+                                    <h2 class="text-xl md:text-3xl font-black text-[#b08968]">
                                         R$<?= number_format((float)$servico['preco'], 2, ',', '.'); ?>
                                     </h2>
 
@@ -404,7 +403,7 @@ Premium
 
 </section>
 
-<section id="combos" class="relative z-10 px-6 py-20">
+<section id="combos" class="relative z-10 px-4 md:px-6 py-20">
 
     <div class="max-w-7xl mx-auto">
 
@@ -452,17 +451,17 @@ Melhor custo benefício
                                 <?php foreach ($servico['imagens'] as $img): ?>
 
                                     <img src="<?= $img ?>"
-                                         class="w-full h-60 object-cover group-hover:scale-110 transition duration-700">
+                                         class="w-full h-36 md:h-60 object-cover group-hover:scale-110 transition duration-700">
 
                                 <?php endforeach; ?>
 
                             </div>
 
-                            <h3 class="text-xl font-bold mb-2 text-[#4b3b31]">
+                            <h3 class="text-sm md:text-xl font-bold mb-2 text-[#4b3b31] leading-tight">
                                 <?= $servico['nome'] ?>
                             </h3>
 
-                            <p class="text-[#8b7767] text-sm leading-relaxed mb-6">
+                            <p class="hidden md:block text-[#8b7767] text-sm leading-relaxed mb-6">
                                 <?= $servico['descricao'] ?>
                             </p>
 
@@ -474,7 +473,7 @@ Melhor custo benefício
                                         R$<?= number_format($servico['preco'] * 1.30, 2, ',', '.'); ?>
                                     </p>
 
-                                    <h2 class="text-3xl font-black text-[#b08968]">
+                                    <h2 class="text-xl md:text-3xl font-black text-[#b08968]">
                                         R$<?= number_format((float)$servico['preco'], 2, ',', '.') ?>
                                     </h2>
 
@@ -505,7 +504,7 @@ Melhor custo benefício
 
 </section>
 
-<section class="relative z-10 px-6 py-20">
+<section class="relative z-10 px-4 md:px-6 py-20">
 
     <div class="max-w-7xl mx-auto">
 
@@ -665,7 +664,7 @@ Melhor custo benefício
 </div>
 
 <div id="toast"
-     class="fixed bottom-24 right-6 bg-[#c8a98d] text-white px-6 py-4 rounded-2xl shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 font-semibold">
+     class="fixed bottom-24 right-6 bg-[#c8a98d] text-white px-4 md:px-6 py-4 rounded-2xl shadow-2xl opacity-0 translate-y-10 transition-all duration-500 z-50 font-semibold">
 </div>
 
 <script>
@@ -738,4 +737,4 @@ Melhor custo benefício
 
 </body>
 </html>
-```
+

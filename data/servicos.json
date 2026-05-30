@@ -32,7 +32,8 @@
         "nome": "BUÇO",
         "descricao": "Remoção precisa dos pelos do buço, deixando a região mais lisa e com aparência uniforme.",
         "preco": "39.99",
-        "imagens": "src\/images\/buço.png"
+        "imagens": "src\/images\/buço.png",
+        "ativo": true
     },
     {
         "categoria": "feminino",
