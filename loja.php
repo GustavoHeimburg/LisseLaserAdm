@@ -230,7 +230,10 @@ Mais procurados
 
                     <div class="card-hover group relative rounded-[34px] p-[1px] bg-[#eadfd4]">
 
-                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2] rounded-[32px] p-5 h-full shadow-sm">
+                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2]
+            rounded-3xl md:rounded-[32px]
+            p-3 md:p-5
+            h-full shadow-sm">
 
                             <div class="absolute top-4 right-4 z-20">
 
@@ -335,7 +338,10 @@ Alta performance
 
                     <div class="card-hover group relative rounded-[34px] p-[1px] bg-[#eadfd4]">
 
-                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2] rounded-[32px] p-5 h-full shadow-sm">
+                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2]
+            rounded-3xl md:rounded-[32px]
+            p-3 md:p-5
+            h-full shadow-sm">
 
                             <div class="absolute top-4 right-4 z-20">
 
@@ -379,13 +385,20 @@ Premium
                                 </div>
 
                                 <button
-                                        class="add-to-cart relative overflow-hidden px-5 py-3 rounded-2xl bg-[#c8a98d] text-white font-semibold shadow-lg hover:scale-105 transition duration-300"
+                                        class="add-to-cart flex items-center justify-center
+           w-10 h-10 md:w-auto md:h-auto
+           md:px-5 md:py-3
+           rounded-xl md:rounded-2xl
+           bg-[#c8a98d]
+           text-white
+           font-semibold
+           shadow-lg
+           hover:scale-105
+           transition duration-300"
                                         data-name="<?= htmlspecialchars($servico['nome']) ?>"
                                         data-price="<?= $servico['preco'] ?>"
                                 >
-
                                     🛒
-
                                 </button>
 
                             </div>
@@ -427,7 +440,7 @@ Melhor custo benefício
 
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
 
             <?php foreach ($servicos as $servico): ?>
                 <?php if ($servico['categoria'] === 'combos' && ($servico['ativo'] ?? true)): ?>
@@ -436,7 +449,10 @@ Melhor custo benefício
 
                     <div class="card-hover group relative rounded-[34px] p-[1px] bg-[#eadfd4]">
 
-                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2] rounded-[32px] p-5 h-full shadow-sm">
+                        <div class="relative overflow-hidden bg-[#fffdfa] border border-[#e7ddd2]
+            rounded-3xl md:rounded-[32px]
+            p-3 md:p-5
+            h-full shadow-sm">
 
                             <?php if ($publico): ?>
 
