@@ -97,17 +97,15 @@
 
 </header>
 
-<!-- HERO -->
 
-<section class="relative z-10 px-5 md:px-8 pt-16 pb-12">
-
+<section class="relative z-10 px-4 md:px-8 pt-8 md:pt-16 pb-8 md:pb-12">
     <div class="max-w-7xl mx-auto">
 
         <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#efe4d7] border border-[#e4d5c5] text-[#8a735f] text-sm mb-8">
             ✨ Atendimento elegante e personalizado
         </span>
 
-        <h1 class="title-font text-5xl md:text-7xl leading-none font-semibold mb-6 max-w-4xl">
+        <h1 class="title-font text-2xl md:text-4xl md:text-7xl leading-none font-semibold mb-6 max-w-4xl">
 
             Seu carrinho
             <span class="italic text-[#b59678]">
@@ -116,7 +114,7 @@
 
         </h1>
 
-        <p class="text-[#7f6d5d] text-lg leading-relaxed max-w-2xl">
+        <p class="hidden md:block text-[#7f6d5d] text-lg leading-relaxed max-w-2xl">
 
             Revise seus serviços favoritos e finalize seu atendimento premium diretamente pelo WhatsApp com toda praticidade.
 
@@ -172,7 +170,7 @@
 
         <div class="lg:sticky lg:top-28">
 
-            <div class="relative overflow-hidden rounded-[40px] bg-white/70 border border-[#eadfce] p-8 shadow-sm">
+            <div class="relative overflow-hidden rounded-[28px] md:rounded-[40px] bg-white/70 border border-[#eadfce] p-5 md:p-8 shadow-sm">
 
                 <div class="absolute top-[-40px] right-[-40px] w-40 h-40 rounded-full bg-[#efe1d2] blur-[70px]"></div>
 
@@ -229,7 +227,7 @@
                                 </p>
 
                                 <h2 id="cart-total"
-                                    class="title-font text-5xl font-semibold text-[#b59678]">
+                                    class="title-font text-3xl md:text-5xl font-semibold text-[#b59678]">
 
                                     R$ 0,00
 
@@ -326,7 +324,7 @@
 
 <!-- MOBILE BAR -->
 
-<div class="fixed bottom-0 left-0 w-full md:hidden bg-[#f8f4ee]/95 backdrop-blur-xl border-t border-[#eadfce] px-5 py-4 flex items-center justify-between z-50">
+<div class="fixed bottom-0 left-0 w-full md:hidden bg-[#f8f4ee]/95 backdrop-blur-xl border-t border-[#eadfce] px-3 py-2 md:px-5 md:py-4 flex items-center justify-between z-50">
 
     <div>
 
@@ -434,7 +432,7 @@
                 bg-white/70
                 border
                 border-[#eadfce]
-                p-7
+                p-4 md:p-7
                 shadow-sm
             `;
 
@@ -442,17 +440,17 @@
 
 <div class="absolute top-[-30px] right-[-30px] w-32 h-32 rounded-full bg-[#f0e2d3] blur-[60px]"></div>
 
-<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-8">
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between p-5 md:p-8">
 
 <div class="flex items-center gap-5">
 
-<div class="w-24 h-24 rounded-[30px] bg-[#f4ece3] border border-[#eadfce] flex items-center justify-center text-4xl">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-[30px] bg-[#f4ece3] border border-[#eadfce] flex items-center justify-center text-2xl md:text-4xl">
 ✨
 </div>
 
 <div>
 
-<h2 class="title-font text-4xl font-semibold mb-2 leading-none">
+<h2 class="title-font text-2xl md:text-4xl font-semibold mb-2 leading-none">
 ${item.name}
 </h2>
 
@@ -466,7 +464,7 @@ Tratamento premium LISSE
 R$ ${formatPrice(item.price * 1.25)}
 </span>
 
-<span class="title-font text-4xl text-[#b59678] font-semibold">
+<span class="title-font text-2xl md:text-4xl text-[#b59678] font-semibold">
 R$ ${formatPrice(item.price)}
 </span>
 
@@ -476,7 +474,7 @@ R$ ${formatPrice(item.price)}
 
 </div>
 
-<div class="flex flex-wrap items-center gap-4">
+<div class="flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-4">
 
 <button class="fav-btn w-14 h-14 rounded-full border border-[#eadfce] bg-[#faf6f1] hover:bg-[#f3ece4] transition text-xl">
 ${isFavorite ? '🤎' : '🤍'}
@@ -484,21 +482,21 @@ ${isFavorite ? '🤎' : '🤍'}
 
 <div class="flex items-center rounded-full overflow-hidden border border-[#eadfce] bg-[#faf7f3]">
 
-<button class="qty-minus px-5 py-4 hover:bg-[#f1e7dc] transition text-lg">
+<button class="qty-minus px-3 py-2 md:px-5 md:py-4 hover:bg-[#f1e7dc] transition text-lg">
 −
 </button>
 
-<span class="px-5 font-semibold">
+<span class="px-3 md:px-5 font-semibold">
 ${item.quantity}
 </span>
 
-<button class="qty-plus px-5 py-4 hover:bg-[#f1e7dc] transition text-lg">
+<button class="qty-plus px-3 py-2 md:px-5 md:py-4 hover:bg-[#f1e7dc] transition text-lg">
 +
 </button>
 
 </div>
 
-<button class="remove-btn px-5 py-4 rounded-full bg-[#fff3f3] border border-[#f1dada] text-[#bf7d7d] hover:bg-[#ffe9e9] transition font-medium">
+<button class="remove-btn px-3 py-2 md:px-5 md:py-4 rounded-full bg-[#fff3f3] border border-[#f1dada] text-[#bf7d7d] hover:bg-[#ffe9e9] transition font-medium">
 
 Remover
 
