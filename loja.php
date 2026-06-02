@@ -208,7 +208,7 @@ perfeita
                 </h2>
 
                 <p class="text-[#8b7767]">
-                    Conheça nossos tratamentos premium
+                    Conheça nossos tratamentos
                 </p>
 
             </div>
@@ -605,7 +605,7 @@ Melhor custo benefício
                 </h2>
 
                 <p class="text-[#7f7065] leading-relaxed">
-                    Estética premium, tecnologia avançada e resultados incríveis.
+                    Estética atual, tecnologia avançada e resultados incríveis.
                 </p>
 
             </div>

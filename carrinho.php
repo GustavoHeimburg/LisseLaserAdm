@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Seu Carrinho • LISSE</title>
+    <title>Seu Carrinho</title>
 
     <link rel="icon" type="image/png" href="src/images/carrinho.png">
 
@@ -79,7 +79,7 @@
                 </h1>
 
                 <p class="text-sm text-[#8b7765]">
-                    Carrinho premium
+                    Carrinho
                 </p>
 
             </div>
@@ -116,7 +116,7 @@
 
         <p class="hidden md:block text-[#7f6d5d] text-lg leading-relaxed max-w-2xl">
 
-            Revise seus serviços favoritos e finalize seu atendimento premium diretamente pelo WhatsApp com toda praticidade.
+            Revise seus serviços favoritos e finalize seu atendimento diretamente pelo WhatsApp com toda praticidade.
 
         </p>
 
@@ -235,10 +235,6 @@
 
                             </div>
 
-                            <div class="px-4 py-2 rounded-full bg-[#f1e7dc] border border-[#e7d7c7] text-[#8d745f] text-sm">
-                                Premium
-                            </div>
-
                         </div>
 
                     </div>
@@ -303,7 +299,7 @@
                                 </h3>
 
                                 <p class="text-sm text-[#8c7968]">
-                                    Atendimento humanizado premium
+                                    Atendimento humanizado
                                 </p>
 
                             </div>
@@ -455,7 +451,7 @@ ${item.name}
 </h2>
 
 <p class="text-[#8b7765] mb-4">
-Tratamento premium LISSE
+Tratamento LISSE
 </p>
 
 <div class="flex items-center gap-3 flex-wrap">
